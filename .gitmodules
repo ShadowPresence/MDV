@@ -1,0 +1,3 @@
+[submodule "VFW/Week1"]
+	path = VFW/Week1
+	url = git@github.com:ShadowPresence/VFW.git
