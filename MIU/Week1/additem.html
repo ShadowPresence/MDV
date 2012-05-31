@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 
 <!--
-		Title: ProDucktive
-		Author: Philip Ainsworth
-		Class: Visual Frameworks
-		Session: 1205
-		Week: 3
+        Title: Fruition
+        Author: Philip Ainsworth
+        Class: Mobile Interfaces and Usability
+        Session: 1206
+        Week: 1
 -->
 
 <html>
@@ -15,23 +15,23 @@
 		<meta name="viewport" content="target-densitydpi=device-dpi"/>
 		<meta name="HandheldFriendly" content="true"/>
 		<meta name="MobileOptimized" content="320"/>
-		<meta name="description" content="ProDucktive web App. Productivity software to help track your life."/>
-		<meta name="keywords" content="productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
 		<meta name="robots" content="index, follow"/>
 		<link rel="stylesheet" href="css/style.css" type="text/css"/>
         <script src="scripts/json.js"></script>
         <script src="scripts/main.js"></script>
-		<title>Add New Quacker Tracker</title>
+		<title>Add New Item</title>
 	</head>
 
 	<body>
 		<header>
-			<img src="img/proDUCKtive.png" alt="ProDucktive" width="300">
+			<img src="img/fruition.png" alt="Fruition" width="198">
 			<h3>Finally, an app that allows you to get the most out of your time!</h3>
 		</header>
 		<form action="#" method="post" name="item" id="item">
 			<fieldset id="fullForm">
-				<legend> New Quacker Tracker </legend>
+				<legend>New Item</legend>
 				<span>Fields marked with a * are required.</span>
 				<ul id="errors"></ul>
 				<label for="taskName">* Name:</label>
@@ -73,9 +73,9 @@
                 <input name="range" type="range" min="0" max="10" value="5" id="priority" class="break" onchange="rangeGo(this.value)">
 				<input name="hidden" type="hidden" id="hidden" class="break">
 			</fieldset>
-			<input type="button" id="submit" class="break" value="Add New Quacker Tracker">
+			<input type="button" id="submit" class="break" value="Add New item">
 		</form>
-        <a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
+        <a href="additem.html" id="newSeed" name="newSeed" style="display:none">Add Task</a>
         <div id="data"></div>
 		<div id="nav">
         	<a href="#" id="clear" name="clear">Clear List</a>

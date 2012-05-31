@@ -1,61 +1,122 @@
 @charset "UTF-8";
 
 /*
-		Title: ProDucktive
+		Title: Fruition
 		Author: Philip Ainsworth
-		Class: Visual Frameworks
-		Session: 1205
-		Week: 3
+		Class: Mobile Interfaces and Usability
+		Session: 1206
+		Week: 1
 */
 
 /* Colors:
-		Yellow: F5C13A
-		Orange: D7642A;
-		Pale: EFE4D8
-		Light Beige: C7B299
-		Dark Beige: 736357
-		Dark Brown: 2D2624
+	Bright Red: #CC252A
+	Medium Red: #A11D21
+	Dark Red: #510F10
+	Black Red: #320E10
+	Pale Green: #E9ECDE
+	Light Green: #C7D786
+	Green: #849B3B
+	Dark Green: #445023
+	Orange: #FFB024
+	Light Beige: #BF9F78
+	Beige: #997F60
+	Dark Beige: #736048
 */
 
 @font-face {
-	font-family: "MiraraeBT";
-	src: url(MIRARAEN.TTF);
+	font-family: "Papyrus";
+	src: url(Papyrus.ttc);
 }
 
 @font-face {
-	font-family: "MiraraeBT-Bold";
-	src: url(MIRARAEB.TTF);
+	font-family: "Informal";
+	src: url(INFR011N.TTF);
 	font-weight: bold;
 }
 
 body {
-	background-color:#C7B299;
+	background-color:#E9ECDE;
 	margin: 0px;
-	font-family: "MiraraeBT";
+	font-family: "Papyrus";
 }
 
 header {
-	background-image: linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -o-linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -moz-linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -webkit-linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -ms-linear-gradient(top, #736357 0%, #C7B299 100%);
+	background-image: linear-gradient(top, #C7D786 0%, #E9ECDE 100%);
+	background-image: -o-linear-gradient(top, #C7D786 0%, #E9ECDE 100%);
+	background-image: -moz-linear-gradient(top, #C7D786 0%, #E9ECDE 100%);
+	background-image: -webkit-linear-gradient(top, #C7D786 0%, #E9ECDE 100%);
+	background-image: -ms-linear-gradient(top, #C7D786 0%, #E9ECDE 100%);
 	text-align: center;
-	border: none;
 	margin: 0px;
 	padding: 10px;
 }
 
+#logo {
+	border: 0px solid #999;
+}
+
+#featureDiv {	
+	height: 160px;
+	border-top: 0px solid #999;
+}
+
+#searchDiv {
+	height: 56px;
+	border-top: 1px solid #999;
+	background-color: #849B3B;
+	background-image: url(../img/search.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#search {
+	position: absolute;
+	display: inline;
+	margin: 11px 0px 0px 20px;
+	height: 28px;
+	width: 190px;
+	border-bottom: 0px solid #999;
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+#searchButton {
+	position: relative;
+	margin: 11px 0px 11px 212px;
+	border-bottom: 0px solid #999;
+	border-radius: 0px;
+	cursor: pointer;
+}
+
+#browseDiv {
+	height: 600px;
+	border-top: 1px solid #999;
+}
+
+#realBig {
+	position: absolute;
+	margin: -73px 0px 0px 32px;
+	color: #A11D21;
+	font: 96pt "Informal";
+}
+
+#text {
+	position: absolute;
+	margin: 28px 0px 0px 140px;
+	display: inline;
+	font: 18pt "Informal";
+}
+
 a:link {
-	color: #EFE4D8;
+	color: #A11D21;
 }
 
 a:visited {
-	color: #C7B299;
+	color: #510F10;
 }
 
 span {
-	color: #d7642a;
+	color: #A11D21;
 	font-style: italic;
 }
 
@@ -64,30 +125,20 @@ span#rangeValue {
 	padding-left: 20px;
 }
 
-#duck {
-	position:relative;
-	-webkit-animation: myfirst 5s linear 0s infinite;
-}
-
-@-webkit-keyframes myfirst {
-	0%   {left:-170px; top:0px;}
-	100% {left:450px; top:0px;}
-}
-
 #nav {
 	display: block;
 	padding: 8px;
 	padding-left: 25px;
-	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -o-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -moz-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -webkit-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -ms-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
 }
 
 fieldset#fullForm {
-	border: 3px inset #EFE4D8;
-	background-color:#C7B299;
+	border: 3px inset #849B3B;
+	background-color:#C7D786;
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-bottom: 10px;
@@ -95,7 +146,7 @@ fieldset#fullForm {
 	padding-left: 5px;
 	padding-bottom: 5px;
 	padding-right: 0px;
-	color: #2D2624;
+	color: #320E10;
 }
 
 fieldset {
@@ -104,14 +155,14 @@ fieldset {
 
 fieldset legend {
 	text-align: center;
-	font-family: "MiraraeBT-Bold";
-	font-size: 22px;
+	font-family: "Informal";
+	font-size: 18px;
 }
 
 fieldset fieldset legend {
 	text-align: left;
-	font-family: "MiraraeBT-Bold";
-	font-size: 18px;
+	font-family: "Informal";
+	font-size: 14px;
 }
 
 fieldset fieldset div {
@@ -121,7 +172,7 @@ fieldset fieldset div {
 }
 
 fieldset > fieldset {
-	border: 1px solid #2D2624;
+	border: 1px solid #320E10;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: auto;
@@ -139,7 +190,7 @@ fieldset#dtDue label {
 }
 
 select {
-	background-color: #EFE4D8;
+	background-color: #E9ECDE;
 	margin-left: 10px;
 }
 
@@ -162,7 +213,7 @@ select {
 }
 
 #notes {
-	background-color: #EFE4D8;
+	background-color: #E9ECDE;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -175,7 +226,17 @@ select {
 }
 
 #errors {
-	color: #f00;
+	color: #445023;
+	width: 90%;
+	border-radius: 50px;
+	font-family: "Informal";
+	font-style: bold;
+	font-size: 16px;
+	background-image: linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -o-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -moz-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -webkit-linear-gradient(top, #C7D786 0%, #FFB024 50%, #C7D786 100%);
+	background-image: -ms-linear-gradient(top, #C7D786 0%, #445023 35%, #C7D786 90%);
 }
 
 .break {
@@ -184,7 +245,7 @@ select {
 
 h3 {
 	text-align: justify;
-	color: #2D2624;
+	color: #510F10;
 }
 
 #submit {
@@ -194,36 +255,36 @@ h3 {
 	margin-bottom: 10px;
 	padding: 5px;
 	width: 90%;
-	border: 1px solid #736357;
+	border: 1px solid #320E10;
 	border-radius: 50px;
-	font-family: "Mirarae BT";
+	font-family: "Informal";
 	font-style: bold;
 	font-size: 16px;
 	cursor: pointer;
-	background-image: linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -o-linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -moz-linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -webkit-linear-gradient(bottom, #736357 20%, #C7B299 100%);
-	background-image: -ms-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: linear-gradient(bottom, #C7D786 0%, #E9ECDE 100%);
+	background-image: -o-linear-gradient(bottom, #C7D786 0%, #E9ECDE 100%);
+	background-image: -moz-linear-gradient(bottom, #C7D786 0%, #E9ECDE 100%);
+	background-image: -webkit-linear-gradient(bottom, #445023 0%, #C7D786 100%);
+	background-image: -ms-linear-gradient(bottom, #C7D786 0%, #E9ECDE 100%);
 }
 
-#newQuack {
+#newSeed {
 	display: block;
 	text-align: center;
 	padding: 8px;
-	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -o-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -moz-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -webkit-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
+	background-image: -ms-linear-gradient(top, #445023 0%, #C7D786 35%, #445023 90%);
 }
 
 #newQuack:hover {
-	color: #F5C13A;
+	color: #CC252A;
 }
 
 #clear:hover {
-	color: #F5C13A;
+	color: #CC252A;
 }
 
 #clear {
@@ -236,7 +297,7 @@ h3 {
 }
 
 #display:hover {
-	color: #F5C13A;
+	color: #CC252A;
 }
 
 #taskContainer {
@@ -270,7 +331,7 @@ div.work {
 
 #dataTag {
 	line-height: 10px;
-	color: #2D2624;
+	color: #445023;
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 7px;
@@ -278,7 +339,7 @@ div.work {
 
 #dataData {
 	line-height: 8px;
-	color: #736357;
+	color: #849B3B;
 	margin-left: 50px;
 	margin-bottom: 15px;
 	font-style: italic;

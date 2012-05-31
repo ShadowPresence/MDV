@@ -1,14 +1,18 @@
 /*
-        Title: ProDucktive
+        Title: Fruition
         Author: Philip Ainsworth
-        Class: Visual Frameworks
-        Session: 1205
-        Week: 3
+        Class: Mobile Interfaces and Usability
+        Session: 1206
+        Week: 1
 */
 
 var rangeGo = function (newValue) {
     document.getElementById('rangeValue').innerHTML = newValue;
 };
+
+var find = function (query) {
+    
+}
 
 window.addEventListener("DOMContentLoaded", function () {
     
@@ -19,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     // Variables
-    var projectGroup = ["None", "Project1", "Project2"],
+    var projectGroup = ["None", "Shopping", "Homework", "Scheduled", "Appointments"],
         catValue,
         errMsg = $('errors');
 
@@ -97,13 +101,14 @@ window.addEventListener("DOMContentLoaded", function () {
         var errorArray = [];
         if (getTaskName.value === "") {
             var tnError = "Please enter a task name.";
-            getTaskName.style.border = "1px solid red";
+            getTaskName.style.border = "2px solid #FFB024";
             errorArray.push(tnError);
         };
         if (errorArray.length >=1) {
             for (var i = 0; i < errorArray.length; i++) {
                 var errorList = document.createElement('li');
                 errorList.innerHTML = errorArray[i];
+                errMsg.style.padding = "5px"
                 errMsg.appendChild(errorList);
             };
             e.preventDefault();
