@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <!--
         Title: Fruition
@@ -10,39 +10,81 @@
 
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="viewport" content="target-densitydpi=device-dpi"/>
-		<meta name="HandheldFriendly" content="true"/>
+		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320"/>
 		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
 		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
 		<meta name="robots" content="index, follow"/>
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/themes/fruition.min.css" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="scripts/libs/modernizr.custom.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 		<title>Fruition</title>
 	</head>
-
 	<body>
-		<header>
-			<div id="featureDiv">
-				<div id="logo">
-					<img src="img/fruition.gif" alt="Fruition" width="198">
-				</div>
-				<div id="realBig" style="float: left">
-					4
-				</div>
-				<h3 id="text">Items Due!</h3>
+		<div data-role="page" data-theme="d">
+			<div data-role="header">
+				<div id="logo"></div>
 			</div>
-		</header>
-		<div id="searchDiv">
-			<input type="text" id="search">
-			<input type="image" src="img/searchBut.gif" id="searchButton" onclick="find(search.value)">
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true"></ul>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Category</h3>
+						test
+					</div>
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Projects</h3>
+						<div data-role="collapsible-set" data-inset="true" data-theme="a">
+							<div data-role="collapsible">
+								<h3>Shopping</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Bread</li>
+									<li>Milk</li>
+									<li>Cheese</li>
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Homework</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Project 1</li>
+									<li>Video Review</li>
+									<li>Video Discussion</li>
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Scheduled</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Pick up kids</li>
+									<li>Band Practice</li>
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Appointments</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Dentist</li>
+									<li>Interview</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar" data-iconpos="right">
+					<ul><li><a href="additem.html">Add New Item</a></li></ul>
+				</div>
+			</div>
 		</div>
-		<div id="browseDiv">
-			<p>d</p>
-		</div>
-		<a href="additem.html" id="newSeed" name="newSeed">New Item</a>
-		<script src="scripts/main.js"></script>
+        <!-- <script src="scripts/json.js"></script>
+        <script src="scripts/main.js"></script> -->
 	</body>
-
 </html>
+<!--
+
+						
