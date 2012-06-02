@@ -34,18 +34,45 @@
 	font-weight: bold;
 }
 
-.informal {
-	font-family: "Informal";
+#realBig {
+	position: absolute;
+	margin: 20px 0px 0px 32px;
+	color: #A11D21;
+	text-decoration: none;
+	font: 96pt "Informal";
 }
 
-#logo {
+#text {
+	position: absolute;
+	margin: 119px 0px 0px 140px;
+	color: #510f10;
+	font-weight: normal;
+	text-shadow: none;
+	display: inline;
+	font: 18pt "Informal";
+}
+
+#subheading {
+	position: absolute;
+	margin-top: 143px;
+	margin-left: 122px;
+	color: #510f10;
+	font-weight: normal;
+	text-shadow: none;
+}
+
+.logo {
+	background-color: #E9ECDE;
+	background-image: url(../img/fruition.png);
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	height: 97px;
+}
+
+#logo1 {
 	background-color: #E9ECDE;
 	background-image: url(../img/fruition.png);
 	background-repeat: no-repeat;
 	background-position: center 6px;
 	height: 160px;
-}
-
-h3 {
-	-webkit-margin-after: 0em;
 }

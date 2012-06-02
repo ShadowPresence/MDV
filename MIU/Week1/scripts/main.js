@@ -1,36 +1,32 @@
 /*
-        Title: Fruition
+        Title: ProDucktive
         Author: Philip Ainsworth
-        Class: Mobile Interfaces and Usability
-        Session: 1206
-        Week: 1
+        Class: Visual Frameworks
+        Session: 1205
+        Week: 3
 */
 
 var rangeGo = function (newValue) {
     document.getElementById('rangeValue').innerHTML = newValue;
 };
 
-var find = function (query) {
-    
-}
-
 window.addEventListener("DOMContentLoaded", function () {
     
     // Element shortcut
-    var gid = function (x) {
+    var $ = function (x) {
         var element = document.getElementById(x);
         return element;
     };
 
     // Variables
-    var projectGroup = ["None", "Shopping", "Homework", "Scheduled", "Appointments"],
+    var projectGroup = ["None", "Project1", "Project2"],
         catValue,
-        errMsg = gid('errors');
+        errMsg = $('errors');
 
     // Project selection
     var project = function () {
-        var tag = gid('projects');
-        for (var i=0; i<projectGroup.length; i++) {
+        var tag = $('projects');
+        for (var i=0, j=projectGroup.length; i<j; i++) {
             var makeOption = document.createElement('option');
             var optText = projectGroup[i];
             makeOption.setAttribute("value", optText);
@@ -43,18 +39,18 @@ window.addEventListener("DOMContentLoaded", function () {
     var toggleControl = function (t) {
         switch(t){
             case "on":
-                gid('item').style.display = "none";
-                gid('clear').style.paddingLeft = "0";
-                gid('clear').style.display = "block";
-                gid('newQuack').style.display = "block";
-                gid('display').style.display = "none";
+                $('item').style.display = "none";
+                $('clear').style.paddingLeft = "0";
+                $('clear').style.display = "block";
+                $('newQuack').style.display = "block";
+                $('display').style.display = "none";
                 break;
             case "off":
-                gid('item').style.display = "block";
-                gid('clear').style.display = "inline";
-                gid('display').style.display = "inline";
-                gid('newQuack').style.display = "none";
-                gid('data').style.display = "none";
+                $('item').style.display = "block";
+                $('clear').style.display = "inline";
+                $('display').style.display = "inline";
+                $('newQuack').style.display = "none";
+                $('data').style.display = "none";
                 break;
             default:
                 return false;
@@ -81,13 +77,13 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         getSelectedRadio();
         var item = {};
-            item.taskName = ["Item:", gid('taskName').value];
+            item.taskName = ["Item:", $('taskName').value];
             item.category = ["Category:", catValue];
-            item.projects = ["Project:", gid('projects').value];
-            item.notes = ["Notes:", gid('notes').value];
-            item.startDate = ["Start Date:", gid('startDate').value];
-            item.dueDate = ["Due Date:", gid('dueDate').value];
-            item.priority = ["Priority:", gid('priority').value];
+            item.projects = ["Project:", $('projects').value];
+            item.notes = ["Notes:", $('notes').value];
+            item.startDate = ["Start Date:", $('startDate').value];
+            item.dueDate = ["Due Date:", $('dueDate').value];
+            item.priority = ["Priority:", $('priority').value];
         localStorage.setItem(id, JSON.stringify(item));
         window.location.reload();
         alert("Item Saved");
@@ -95,20 +91,19 @@ window.addEventListener("DOMContentLoaded", function () {
     
     // Form Validation
     var validate = function (e) {
-        var getTaskName = gid('taskName');
+        var getTaskName = $('taskName');
         errMsg.innerHTML = "";
         getTaskName.style.border = "";
         var errorArray = [];
         if (getTaskName.value === "") {
             var tnError = "Please enter a task name.";
-            getTaskName.style.border = "2px solid #FFB024";
+            getTaskName.style.border = "1px solid red";
             errorArray.push(tnError);
         };
         if (errorArray.length >=1) {
             for (var i = 0; i < errorArray.length; i++) {
                 var errorList = document.createElement('li');
                 errorList.innerHTML = errorArray[i];
-                errMsg.style.padding = "5px"
                 errMsg.appendChild(errorList);
             };
             e.preventDefault();
@@ -135,7 +130,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
         toggleControl("off");
-        gid('taskName').value = item.taskName[1];
+        $('taskName').value = item.taskName[1];
         var radios = document.forms[0].category;
         for (var i = 0; i < radios.length; i++) {
             if(radios[i].value == "Work" && item.category[1] == "Work") {
@@ -144,14 +139,14 @@ window.addEventListener("DOMContentLoaded", function () {
                 radios[i].checked = "checked";
             };
         };
-        gid('projects').value = item.projects[1];
-        gid('notes').value = item.notes[1];
-        gid('startDate').value = item.startDate[1];
-        gid('dueDate').value = item.dueDate[1];
-        gid('priority').value = item.priority[1];
-        gid('rangeValue').innerHTML = item.priority[1];
-        gid('submit').value = "Update Task";
-        var editSubmit = gid('submit');
+        $('projects').value = item.projects[1];
+        $('notes').value = item.notes[1];
+        $('startDate').value = item.startDate[1];
+        $('dueDate').value = item.dueDate[1];
+        $('priority').value = item.priority[1];
+        $('rangeValue').innerHTML = item.priority[1];
+        $('submit').value = "Update Task";
+        var editSubmit = $('submit');
         editSubmit.addEventListener("click", validate);
         editSubmit.key = this.key;
     };
@@ -182,8 +177,8 @@ window.addEventListener("DOMContentLoaded", function () {
     //Get Data
     var getData = function () {
         toggleControl("on");
-        var getDiv = gid('data');
-        gid('data').style.display = "block";
+        var getDiv = $('data');
+        $('data').style.display = "block";
         for(i=0; i<localStorage.length; i++) {
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
@@ -261,11 +256,11 @@ window.addEventListener("DOMContentLoaded", function () {
     project();
     
     //Click events
-    var display = gid('display');
+    var display = $('display');
     display.addEventListener("click", lsc);
-    var clearD = gid('clear');
+    var clearD = $('clear');
     clearD.addEventListener("click", clearData);
-    var saveD = gid('submit');
+    var saveD = $('submit');
     saveD.addEventListener("click", validate);
 
 })

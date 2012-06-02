@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 
 <!--
-		Title: Fruition
+		Title: ProDucktive
 		Author: Philip Ainsworth
-		Class: Mobile Interfaces and Usability
-		Session: 1206
-		Week: 1
+		Class: Visual Frameworks
+		Session: 1205
+		Week: 3
 -->
 
 <html>
@@ -15,82 +15,71 @@
 		<meta name="viewport" content="target-densitydpi=device-dpi"/>
 		<meta name="HandheldFriendly" content="true"/>
 		<meta name="MobileOptimized" content="320"/>
-		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
-		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="description" content="ProDucktive web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="productive, producktive, productivity, organization, organize, todo, list, track"/>
 		<meta name="robots" content="index, follow"/>
-		<link rel="stylesheet" href="css/themes/fruition.min.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<link rel="stylesheet" href="css/style.css" type="text/css"/>
-		<script src="scripts/libs/modernizr.custom.min.js"></script>
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-		<title>Add New Item</title>
+		<link rel="stylesheet" href="css/old.css" type="text/css"/>
+		<title>Add New Quacker Tracker</title>
 	</head>
 
 	<body>
-		<div data-role="page" data-theme="d" data-content-theme="d">
-			<div data-role="header">
-				<div id="logo"></div>
-			</div>
-			<div data-role="content">
-				<form action="#" method="post" name="item" id="item">
-					<fieldset id="fullForm">
-						<legend>New Item</legend>
-						<span>Fields marked with a * are required.</span>
-						<ul id="errors"></ul>
-						<label for="taskName">* Name:</label>
-						<input name="taskName" type="text" id="taskName">
-						<fieldset id="grouping">
+		<header>
+			<img src="img/proDUCKtive.png" alt="ProDucktive" width="300">
+			<h3>Finally, an app that allows you to get the most out of your time!</h3>
+		</header>
+		<form action="#" method="post" name="item" id="item">
+			<fieldset id="fullForm">
+				<legend> New Quacker Tracker </legend>
+				<span>Fields marked with a * are required.</span>
+				<ul id="errors"></ul>
+				<label for="taskName">* Name:</label>
+				<input name="taskName" type="text" id="taskName">
+				<fieldset id="grouping">
 
-							<!-- ** CATEGORIES ** -->
-							<label>Category:</label>
-							<label for="category_0">Home</label>
-							<input type="radio" name="category" value="Home" id="category_0">
-							<label for="category_1">Work</label>
-							<input type="radio" name="category" value="Work" id="category_1"><br />
+					<!-- ** CATEGORIES ** -->
+					<label>Category:</label>
+					<label for="category_0">Home</label>
+					<input type="radio" name="category" value="Home" id="category_0">
+					<label for="category_1">Work</label>
+					<input type="radio" name="category" value="Work" id="category_1"><br />
 
-							<!-- ** PROJECTS ** -->
-							<label for="projects">Project:</label>
-							<select name="projects" id="projects"></select>
-						</fieldset>
-						<!-- ** DATES & TIMES ** -->
-						<!-- ** START ** -->
-						<fieldset id="dtStart">
-							<legend>Start</legend>
-							<div>
-								<label for="startDate">Date:</label><br />
-								<input name="startDate" type="datetime-local" id="startDate">
-							</div>
-						</fieldset>
-						<!-- ** DUE ** -->
-						<fieldset id="dtDue">
-							<legend>Due</legend>
-							<div>
-								<label for="dueDate">Date:</label><br />
-								<input name="dueDate" type="datetime-local" id="dueDate">
-							</div>
-						</fieldset>
-						<!-- ** PRIORITY ** -->
-						<label for="notes" class="break">Notes:</label>
-						<textarea name="notes" id="notes" class="break">A place to add notes</textarea>
-						<label>Priority:</label>
-						<input name="range" type="range" min="0" max="10" value="5" id="priority">
-					</fieldset>
-					<input type="submit" id="submit" class="break" value="Add New item">
-				</form>
-				<a href="#" id="newSeed" name="newSeed" style="display:none">Add Task</a>
-				<div id="data"></div>
-			</div>
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar" data-iconpos="right">
-					<ul>
-						<li><a href="#" data-icon="delete" id="clear">Clear List</a></li>
-						<li><a href="#" data-icon="grid" id="display">Show Task List</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<script src="scripts/json.js"></script>
-		<script src="scripts/main.js"></script>
+					<!-- ** PROJECTS ** -->
+					<label for="projects">Project:</label>
+					<select name="projects" id="projects"></select>
+				</fieldset>
+				<!-- ** DATES & TIMES ** -->
+				<!-- ** START ** -->
+				<fieldset id="dtStart">
+					<legend>Start</legend>
+					<div>
+						<label for="startDate">Date:</label><br />
+						<input name="startDate" type="datetime-local" id="startDate">
+					</div>
+				</fieldset>
+				<!-- ** DUE ** -->
+				<fieldset id="dtDue">
+					<legend>Due</legend>
+					<div>
+						<label for="dueDate">Date:</label><br />
+						<input name="dueDate" type="datetime-local" id="dueDate">
+					</div>
+				</fieldset>
+				<!-- ** PRIORITY ** -->
+				<label for="notes" class="break">Notes:</label>
+				<textarea name="notes" id="notes" class="break">A place to add notes</textarea>
+				<label>Priority:</label><span id="rangeValue">5</span>
+                <input name="range" type="range" min="0" max="10" value="5" id="priority" class="break" onchange="rangeGo(this.value)">
+				<input name="hidden" type="hidden" id="hidden" class="break">
+			</fieldset>
+			<input type="button" id="submit" class="break" value="Add New Quacker Tracker">
+		</form>
+        <a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
+        <div id="data"></div>
+		<div id="nav">
+        	<a href="#" id="clear" name="clear">Clear List</a>
+			<a href="#" id="display" name="display">Show Task List</a>
+        </div>
+        <script src="scripts/json.js"></script>
+        <script src="scripts/main.js"></script>
 	</body>
 </html>
