@@ -12,34 +12,55 @@
 		Yellow: F5C13A
 		Orange: D7642A;
 		Pale: EFE4D8
-		Light Beige: C7B299
-		Dark Beige: 736357
+		Light Beige: BF9F78
+		Dark Beige: 736048
 		Dark Brown: 2D2624
 */
 
+/*
+Colors:
+	Bright Red: #CC252A
+	Medium Red: #A11D21
+	Dark Red: #510F10
+	Black Red: #320E10
+	Pale Green: #E9ECDE
+	Light Green: #C7D786
+	Green: #849B3B
+	Dark Green: #445023
+	Orange: #FFB024
+	Light Beige: #BF9F78
+	Beige: #997F60
+	Dark Beige: #736048
+	Very Dark Beige: #382F23
+*/
+
 @font-face {
-	font-family: "MiraraeBT";
-	src: url(MIRARAEN.TTF);
+	font-family: "Papyrus";
+	src: url(Papyrus.ttc);
 }
 
 @font-face {
-	font-family: "MiraraeBT-Bold";
-	src: url(MIRARAEB.TTF);
+	font-family: "Informal";
+	src: url(INFR011N.TTF);
 	font-weight: bold;
 }
 
 body {
-	background-color:#C7B299;
+	background-color:#849B3B;
 	margin: 0px;
-	font-family: "MiraraeBT";
+	font-family: "Papyrus";
+}
+
+#data {
+	background-color:#E9ECDE;
 }
 
 header {
-	background-image: linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -o-linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -moz-linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -webkit-linear-gradient(top, #736357 0%, #C7B299 100%);
-	background-image: -ms-linear-gradient(top, #736357 0%, #C7B299 100%);
+	background-image: linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -o-linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -moz-linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -webkit-linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -ms-linear-gradient(top, #445023 0%, #849B3B 100%);
 	text-align: center;
 	border: none;
 	margin: 0px;
@@ -47,15 +68,15 @@ header {
 }
 
 a:link {
-	color: #EFE4D8;
+	color: #A11D21;
 }
 
 a:visited {
-	color: #C7B299;
+	color: #510F10;
 }
 
 span {
-	color: #d7642a;
+	color: #E9ECDE;
 	font-style: italic;
 }
 
@@ -64,30 +85,20 @@ span#rangeValue {
 	padding-left: 20px;
 }
 
-#duck {
-	position:relative;
-	-webkit-animation: myfirst 5s linear 0s infinite;
-}
-
-@-webkit-keyframes myfirst {
-	0%   {left:-170px; top:0px;}
-	100% {left:450px; top:0px;}
-}
-
 #nav {
 	display: block;
 	padding: 8px;
 	padding-left: 25px;
-	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -o-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -moz-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -webkit-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -ms-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
 }
 
 fieldset#fullForm {
-	border: 3px inset #EFE4D8;
-	background-color:#C7B299;
+	border: 3px inset #C7D786;
+	background-color:#445023;
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-bottom: 10px;
@@ -95,7 +106,7 @@ fieldset#fullForm {
 	padding-left: 5px;
 	padding-bottom: 5px;
 	padding-right: 0px;
-	color: #2D2624;
+	color: #BF9F78;
 }
 
 fieldset {
@@ -104,13 +115,13 @@ fieldset {
 
 fieldset legend {
 	text-align: center;
-	font-family: "MiraraeBT-Bold";
+	font-family: "Informal";
 	font-size: 22px;
 }
 
 fieldset fieldset legend {
 	text-align: left;
-	font-family: "MiraraeBT-Bold";
+	font-family: "Informal";
 	font-size: 18px;
 }
 
@@ -121,7 +132,7 @@ fieldset fieldset div {
 }
 
 fieldset > fieldset {
-	border: 1px solid #2D2624;
+	border: 1px solid #382F23;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: auto;
@@ -139,13 +150,13 @@ fieldset#dtDue label {
 }
 
 select {
-	background-color: #EFE4D8;
+	background-color: #C7D786;
 	margin-left: 10px;
 }
 
 #grouping > input {
 	width: auto;
-	/*background-color: #F5C13A;*/
+	background-color: #C7D786;
 }
 
 #startDate {
@@ -162,7 +173,7 @@ select {
 }
 
 #notes {
-	background-color: #EFE4D8;
+	background-color: #C7D786;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -175,7 +186,12 @@ select {
 }
 
 #errors {
-	color: #f00;
+	background-image: linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -o-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -moz-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -webkit-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -ms-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	color: #736048;
 }
 
 .break {
@@ -194,36 +210,36 @@ h3 {
 	margin-bottom: 10px;
 	padding: 5px;
 	width: 90%;
-	border: 1px solid #736357;
+	border: 1px solid #736048;
 	border-radius: 50px;
-	font-family: "Mirarae BT";
+	font-family: "Informal";
 	font-style: bold;
 	font-size: 16px;
 	cursor: pointer;
-	background-image: linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -o-linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -moz-linear-gradient(top, #736357 20%, #C7B299 100%);
-	background-image: -webkit-linear-gradient(bottom, #736357 20%, #C7B299 100%);
-	background-image: -ms-linear-gradient(top, #736357 20%, #C7B299 100%);
+	background-image: linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -o-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -moz-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -webkit-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -ms-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
 }
 
 #newQuack {
 	display: block;
 	text-align: center;
 	padding: 8px;
-	background-image: linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -o-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -moz-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -webkit-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
-	background-image: -ms-linear-gradient(top, #2D2624 0%, #736357 35%, #2D2624 90%);
+	background-image: linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -o-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -moz-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -webkit-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -ms-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
 }
 
 #newQuack:hover {
-	color: #F5C13A;
+	color: #FFB024;
 }
 
 #clear:hover {
-	color: #F5C13A;
+	color: #FFB024;
 }
 
 #clear {
@@ -236,7 +252,7 @@ h3 {
 }
 
 #display:hover {
-	color: #F5C13A;
+	color: #FFB024;
 }
 
 #taskContainer {
@@ -270,15 +286,16 @@ div.work {
 
 #dataTag {
 	line-height: 10px;
-	color: #2D2624;
+	color: #445023;
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 7px;
+	font-weight: bold;
 }
 
 #dataData {
 	line-height: 8px;
-	color: #736357;
+	color: #382F23;
 	margin-left: 50px;
 	margin-bottom: 15px;
 	font-style: italic;
