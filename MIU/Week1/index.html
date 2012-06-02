@@ -22,14 +22,17 @@
 		<link rel="stylesheet" href="css/themes/fruition.min.css" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<script src="scripts/libs/modernizr.custom.min.js"></script>
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 		<title>Fruition</title>
 	</head>
 	<body>
-		<div data-role="page" data-theme="d">
+<!-- ** Page 1 (home) ** -->
+		<div data-role="page" data-theme="d" id="home">
 			<div data-role="header">
-				<div id="logo"></div>
+				<div id="logo1">
+					<a href="#due" id="realBig" style="float: left">4</a>
+					<h3 id="text">Tasks Due!</h3>
+					<span id="subheading">Click number for details.</span>
+				</div>
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" data-filter="true"></ul>
@@ -77,14 +80,37 @@
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar" data-iconpos="right">
-					<ul><li><a href="additem.html">Add New Item</a></li></ul>
+					<ul><li><a href="additem.html" data-ajax="false">Add New Item</a></li></ul>
 				</div>
 			</div>
 		</div>
-        <!-- <script src="scripts/json.js"></script>
-        <script src="scripts/main.js"></script> -->
+<!-- ** Page 2 (due) ** -->
+		<div data-role="page" data-theme="a" id="due">
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-filter="true">
+					<li data-role="list-divider">THE FOLLOWING TASKS ARE DUE!</li>
+					<li>MIU Project 1</li>
+					<li>Video Review</li>
+					<li>Video Discussion</li>
+					<li>Pick up kids</li>
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home">Back</a></li>
+						<li><a href="additem.html" data-ajax="false">Add New Item</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <script src="scripts/json.js"></script>
+        <script src="scripts/main.js"></script>
 	</body>
 </html>
-<!--
-
-						
