@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     // Variables
-    var projectGroup = ["None", "Project1", "Project2"],
+    var projectGroup = ["None", "Shopping", "Homework", "Scheduled", "Appointments"],
         catValue,
         errMsg = $('errors');
 

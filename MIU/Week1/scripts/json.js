@@ -19,7 +19,7 @@ var instaBusy = {
 	"item2": {
 		"taskName":["Item:","Test 2"],
 		"category":["Category:","Work"],
-		"projects":["Project:","Project1"],
+		"projects":["Project:","Shopping"],
 		"notes":["Notes:","A place to add notes"],
 		"startDate":["Start Date:","2012-05-21T15:32"],
 		"dueDate":["Due Date:","2012-06-21T15:32"],
@@ -28,7 +28,7 @@ var instaBusy = {
 	"item3": {
 		"taskName":["Item:","Test 3"],
 		"category":["Category:","Home"],
-		"projects":["Project:","Project2"],
+		"projects":["Project:","Homework"],
 		"notes":["Notes:","A place to add notes"],
 		"startDate":["Start Date:","2012-05-21T15:32"],
 		"dueDate":["Due Date:","2012-06-01T15:32"],
@@ -46,7 +46,7 @@ var instaBusy = {
 	"item5": {
 		"taskName":["Item:","Test 3"],
 		"category":["Category:","Home"],
-		"projects":["Project:","Project2"],
+		"projects":["Project:","Scheduled"],
 		"notes":["Notes:","A place to add notes"],
 		"startDate":["Start Date:","2012-05-21T15:32"],
 		"dueDate":["Due Date:","2012-06-01T15:32"],
@@ -54,8 +54,8 @@ var instaBusy = {
 	},
 	"item6": {
 		"taskName":["Item:","Test 3"],
-		"category":["Category:","Home"],
-		"projects":["Project:","Project2"],
+		"category":["Category:","Work"],
+		"projects":["Project:","Appointment"],
 		"notes":["Notes:","A place to add notes"],
 		"startDate":["Start Date:","2012-05-21T15:32"],
 		"dueDate":["Due Date:","2012-06-01T15:32"],
