@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!--
+        Title: Fruition
+        Author: Philip Ainsworth
+        Class: Mobile Interfaces and Usability
+        Session: 1206
+        Week: 1
+-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="robots" content="index, follow"/>
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/themes/fruition.min.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="scripts/libs/modernizr.custom.min.js"></script>
+		<title>Fruition</title>
+	</head>
+	<body>
+<!-- ** Page 1 (home) ** -->
+		<div data-role="page" data-theme="d" id="home">
+			<div data-role="header">
+				<div id="logo1">
+					<a href="#due" id="realBig" style="float: left">4</a>
+					<h3 id="text">Tasks Due!</h3>
+					<span id="subheading">Click number for details.</span>
+				</div>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true"></ul>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Category</h3>
+						test
+					</div>
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Projects</h3>
+						<div data-role="collapsible-set" data-inset="true" data-theme="a">
+							<div data-role="collapsible">
+								<h3>Shopping</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Bread</li>
+									<li>Milk</li>
+									<li>Cheese</li>
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Homework</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Project 1</li>
+									<li>Video Review</li>
+									<li>Video Discussion</li>
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Scheduled</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Pick up kids</li>
+									<li>Band Practice</li>
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Appointments</h3>
+								<ul data-role="listview" data-inset="true" data-theme="a">
+									<li>Dentist</li>
+									<li>Interview</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar" data-iconpos="right">
+					<ul><li><a href="additem.html" data-ajax="false">Add New Item</a></li></ul>
+				</div>
+			</div>
+		</div>
+<!-- ** Page 2 (due) ** -->
+		<div data-role="page" data-theme="a" id="due">
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-filter="true">
+					<li data-role="list-divider">THE FOLLOWING TASKS ARE DUE!</li>
+					<li>MIU Project 1</li>
+					<li>Video Review</li>
+					<li>Video Discussion</li>
+					<li>Pick up kids</li>
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home">Back</a></li>
+						<li><a href="additem.html" data-ajax="false">Add New Item</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <script src="scripts/json.js"></script>
+        <script src="scripts/main.js"></script>
+	</body>
+</html>
