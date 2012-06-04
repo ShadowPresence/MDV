@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     // Variables
-    var projectGroup = ["None", "Project1", "Project2"],
+    var projectGroup = ["None", "Shopping", "Homework", "Scheduled", "Appointments"],
         catValue,
         errMsg = $('errors');
 
@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var errorArray = [];
         if (getTaskName.value === "") {
             var tnError = "Please enter a task name.";
-            getTaskName.style.border = "1px solid red";
+            getTaskName.style.border = "1px solid #CC252A";
             errorArray.push(tnError);
         };
         if (errorArray.length >=1) {

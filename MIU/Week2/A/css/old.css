@@ -1,0 +1,306 @@
+@charset "UTF-8";
+
+/*
+		Title: ProDucktive
+		Author: Philip Ainsworth
+		Class: Visual Frameworks
+		Session: 1205
+		Week: 3
+*/
+
+/* Colors:
+		Yellow: F5C13A
+		Orange: D7642A;
+		Pale: EFE4D8
+		Light Beige: BF9F78
+		Dark Beige: 736048
+		Dark Brown: 2D2624
+*/
+
+/*
+Colors:
+	Bright Red: #CC252A
+	Medium Red: #A11D21
+	Dark Red: #510F10
+	Black Red: #320E10
+	Pale Green: #E9ECDE
+	Light Green: #C7D786
+	Green: #849B3B
+	Dark Green: #445023
+	Orange: #FFB024
+	Light Beige: #BF9F78
+	Beige: #997F60
+	Dark Beige: #736048
+	Very Dark Beige: #382F23
+*/
+
+@font-face {
+	font-family: "Papyrus";
+	src: url(Papyrus.ttc);
+}
+
+@font-face {
+	font-family: "Informal";
+	src: url(INFR011N.TTF);
+	font-weight: bold;
+}
+
+body {
+	background-color:#849B3B;
+	margin: 0px;
+	font-family: "Papyrus";
+}
+
+#data {
+	background-color:#E9ECDE;
+}
+
+header {
+	background-image: linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -o-linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -moz-linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -webkit-linear-gradient(top, #445023 0%, #849B3B 100%);
+	background-image: -ms-linear-gradient(top, #445023 0%, #849B3B 100%);
+	text-align: center;
+	border: none;
+	margin: 0px;
+	padding: 10px;
+}
+
+a:link {
+	color: #A11D21;
+}
+
+a:visited {
+	color: #510F10;
+}
+
+span {
+	color: #E9ECDE;
+	font-style: italic;
+}
+
+span#rangeValue {
+	text-align: center;
+	padding-left: 20px;
+}
+
+#nav {
+	display: block;
+	padding: 8px;
+	padding-left: 25px;
+	background-image: linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -o-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -moz-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -webkit-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -ms-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+}
+
+fieldset#fullForm {
+	border: 3px inset #C7D786;
+	background-color:#445023;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	padding-top: 20px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+	color: #BF9F78;
+}
+
+fieldset {
+	border-radius: 15px;
+}
+
+fieldset legend {
+	text-align: center;
+	font-family: "Informal";
+	font-size: 22px;
+}
+
+fieldset fieldset legend {
+	text-align: left;
+	font-family: "Informal";
+	font-size: 18px;
+}
+
+fieldset fieldset div {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+fieldset > fieldset {
+	border: 1px solid #382F23;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	padding: 5px;
+}
+
+fieldset#dtStart label {
+	line-height: 16px;
+}
+
+fieldset#dtDue label {
+	line-height: 16px;
+}
+
+select {
+	background-color: #C7D786;
+	margin-left: 10px;
+}
+
+#grouping > input {
+	width: auto;
+	background-color: #C7D786;
+}
+
+#startDate {
+	width: 100%;
+}
+
+#dueDate {
+	width: 100%;
+}
+
+#taskName {
+	display: inline;
+	width: 72%;
+}
+
+#notes {
+	background-color: #C7D786;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#priority {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#errors {
+	background-image: linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -o-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -moz-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -webkit-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	background-image: -ms-linear-gradient(top, #445023 0%, #FFB024 35%, #445023 90%);
+	color: #736048;
+}
+
+.break {
+	display: block;
+}
+
+h3 {
+	text-align: justify;
+	color: #2D2624;
+}
+
+#submit {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding: 5px;
+	width: 90%;
+	border: 1px solid #736048;
+	border-radius: 50px;
+	font-family: "Informal";
+	font-style: bold;
+	font-size: 16px;
+	cursor: pointer;
+	background-image: linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -o-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -moz-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -webkit-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -ms-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+}
+
+#newQuack {
+	display: block;
+	text-align: center;
+	padding: 8px;
+	background-image: linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -o-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -moz-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -webkit-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+	background-image: -ms-linear-gradient(top, #997F60 0%, #BF9F78 35%, #997F60 90%);
+}
+
+#newQuack:hover {
+	color: #FFB024;
+}
+
+#clear:hover {
+	color: #FFB024;
+}
+
+#clear {
+	text-align: center;
+}
+
+#display {
+	position: relative;
+	left: 90px;
+}
+
+#display:hover {
+	color: #FFB024;
+}
+
+#taskContainer {
+	border-top: 2px;
+	border-top-style: solid;
+	width: 75%;
+}
+
+#icon {
+	border-top: 2px;
+	border-top-style: solid;
+	float: right;
+	width: 25%;
+}
+
+div.home, div.work {
+	background: url("../img/iconSprite.png") no-repeat 0 20px;
+	padding-top: 20px;
+}
+
+div.home {
+	background-position: 0px -106px;
+	width: 79px;
+	height: 82px;
+}
+
+div.work {
+	width: 79px;
+	height: 97px;
+}
+
+#dataTag {
+	line-height: 10px;
+	color: #445023;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 7px;
+	font-weight: bold;
+}
+
+#dataData {
+	line-height: 8px;
+	color: #382F23;
+	margin-left: 50px;
+	margin-bottom: 15px;
+	font-style: italic;
+}
+
+ul {
+	text-align: left;
+}
