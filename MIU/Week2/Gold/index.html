@@ -24,7 +24,7 @@
 		<script src="scripts/libs/modernizr.custom.min.js"></script>
 		<title>Fruition</title>
 	</head>
-	<body>
+	<body onLoad="listDataByCategory()">
 <!-- ** Page 1 (home) ** -->
 		<div data-role="page" data-theme="d" id="home">
 			<div data-role="header">
@@ -39,7 +39,15 @@
 				<div data-role="collapsible-set">
 					<div data-role="collapsible" data-collapsed="true">
 						<h3>Category</h3>
-						test
+						<div id="catHanger" data-role="collapsible-set" data-inset="true" data-theme="a">
+							<div id="cat1" data-role="collapsible">
+								<h3>Home</h3>
+							</div>
+							<div id="cat2" data-role="collapsible">
+								<h3>Work</h3>
+							</div>
+						</div>
+						$('#catHanger').listview('refresh');
 					</div>
 					<div data-role="collapsible" data-collapsed="true">
 						<h3>Projects</h3>
@@ -135,9 +143,10 @@
 				</div>
 			</div>
 		</div>
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
         <script src="scripts/json.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/dataQuery.js"></script>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 	</body>
 </html>
