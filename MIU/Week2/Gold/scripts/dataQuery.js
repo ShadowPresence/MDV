@@ -11,9 +11,6 @@
 		var element = document.getElementById(x);
 		return element;
 	};
-<<<<<<< HEAD
-	
-=======
 
 // Future functionality
 	
@@ -41,7 +38,6 @@
 	};*/
 
 
->>>>>>> origin/gh-pages
 	//Create list
 	var listDataByCategory = function () {
 		var getHanger = gid('catHanger');
@@ -60,39 +56,20 @@
 			};
 			var cat1List = gid('cat1');
 			var cat2List = gid('cat2');
-<<<<<<< HEAD
-			var listView = document.createElement('ul');
-			listView.setAttribute("data-role", "listview");
-			listView.setAttribute("data-inset", "true");
-			listView.setAttribute("data-theme", "a");
-			listView.setAttribute("class", "ui-listview ui-listview-inset ui-corner-all ui-shadow");
-			for (var f = 0; f < cat1Array.length; f++) {
-				var listing = document.createElement('li');
-				cat1List.appendChild(listView);
-				listView.appendChild(listing);
-=======
 			for (var f = 0; f < cat1Array.length; f++) {
 				var listing = document.createElement('li');
 				cat1List.appendChild(listing);
->>>>>>> origin/gh-pages
 				listing.innerHTML = cat1Array[f];
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
 			};
 			for (var f = 0; f < cat2Array.length; f++) {
 				var listing = document.createElement('li');
-<<<<<<< HEAD
-				cat2List.appendChild(listView);
-				listView.appendChild(listing);
-=======
 				cat2List.appendChild(listing);
->>>>>>> origin/gh-pages
 				listing.innerHTML = cat2Array[f];
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
 			};
 		};
 		
-<<<<<<< HEAD
-=======
 	};
 
 	var listDataByProject = function () {
@@ -170,5 +147,4 @@
 			};
 		};
 		
->>>>>>> origin/gh-pages
 	};
