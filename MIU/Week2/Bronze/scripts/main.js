@@ -10,7 +10,7 @@ var rangeGo = function (newValue) {
     document.getElementById('rangeValue').innerHTML = newValue;
 };
 
-window.addEventListener("DOMContentLoaded", function () {
+//window.addEventListener("DOMContentLoaded", function () {
     
     // Element shortcut
     var $ = function (x) {
@@ -215,6 +215,8 @@ window.addEventListener("DOMContentLoaded", function () {
             var id = Math.floor(Math.random()*1000000);
             localStorage.setItem(id, JSON.stringify(instaBusy[n]));
         };
+        window.location.reload();
+        alert("Test data has been loaded.");
     };
 
     //Local Storage check
@@ -263,4 +265,4 @@ window.addEventListener("DOMContentLoaded", function () {
     var saveD = $('submit');
     saveD.addEventListener("click", validate);
 
-})
+//})

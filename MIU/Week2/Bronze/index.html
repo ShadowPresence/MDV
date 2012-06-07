@@ -5,7 +5,7 @@
         Author: Philip Ainsworth
         Class: Mobile Interfaces and Usability
         Session: 1206
-        Week: 1
+        Week: 2
 -->
 
 <html>
@@ -26,84 +26,89 @@
 	</head>
 	<body>
 <!-- ** Page 1 (home) ** -->
-		<div data-role="page" data-theme="d" id="home">
-			<div data-role="header">
+		<div data-role="page" data-theme="a" id="home">
+	<!-- ** HEADER ** -->
+			<div data-role="header" style="border:0px">
 				<div id="logo1">
 					<a href="#due" id="realBig" style="float: left">4</a>
 					<h3 id="text">Tasks Due!</h3>
 					<span id="subheading">Click number for details.</span>
 				</div>
 			</div>
-			<div data-role="content">
-				<ul data-role="listview" data-filter="true"></ul>
-				<div data-role="collapsible-set">
-					<div data-role="collapsible" data-collapsed="true">
-						<h3>Category</h3>
-						test
-					</div>
-					<div data-role="collapsible" data-collapsed="true">
-						<h3>Projects</h3>
-						<div data-role="collapsible-set" data-inset="true" data-theme="a">
-							<div data-role="collapsible">
-								<h3>Shopping</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Bread</li>
-									<li>Milk</li>
-									<li>Cheese</li>
-								</ul>
-							</div>
-							<div data-role="collapsible">
-								<h3>Homework</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Project 1</li>
-									<li>Video Review</li>
-									<li>Video Discussion</li>
-								</ul>
-							</div>
-							<div data-role="collapsible">
-								<h3>Scheduled</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Pick up kids</li>
-									<li>Band Practice</li>
-								</ul>
-							</div>
-							<div data-role="collapsible">
-								<h3>Appointments</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Dentist</li>
-									<li>Interview</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" style="background-color:#E9ECDE">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><a href="additem.html" data-role="button" data-theme="c" data-icon="plus" data-iconpos="right" data-ajax="false">Add Item</a></div>
+					<div class="ui-block-b"><a href="#home" data-role="button" data-theme="c" data-icon="arrow-d" data-iconpos="right" onclick="autofill()">Load Data</a></div>
+					<div class="ui-block-a"><a href="https://github.com/ShadowPresence/MDV/tree/master/MIU" data-role="button" data-theme="c" data-icon="arrow-r" data-iconpos="right">Github</a></div>
+					<div class="ui-block-b"><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Gold/index.html" data-role="button" data-theme="c" data-icon="arrow-r" data-iconpos="right">Gold App</a></div>
+					<div class="ui-block-a"><a href="#info" data-role="button" data-theme="c" data-icon="info" data-iconpos="right" data-transition="slideup">Info</a></div>
+					<div class="ui-block-b"><a href="#home" data-role="button" data-theme="c" data-icon="delete" data-iconpos="right" onclick="clearData()">Clear All</a></div>
+				</fieldset>
 			</div>
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar" data-iconpos="right">
-					<ul><li><a href="additem.html" data-ajax="false">Add New Item</a></li></ul>
-				</div>
-			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" class="tagline" data-position="fixed">Finally, an app that helps maximize your time.</div>
 		</div>
 <!-- ** Page 2 (due) ** -->
-		<div data-role="page" data-theme="a" id="due">
+		<div data-role="page" data-theme="b" id="due">
 			<div data-role="header">
 				<div id="logo">
 				</div>
 			</div>
-			<div data-role="content" data-theme="a">
-				<ul data-role="listview" data-filter="true">
-					<li data-role="list-divider">THE FOLLOWING TASKS ARE DUE!</li>
-					<li>MIU Project 1</li>
-					<li>Video Review</li>
-					<li>Video Discussion</li>
+			<div data-role="content" data-theme="b">
+				<ul data-role="listview" data-divider-theme="c" data-filter="true" style="background-color:#E9ECDE">
+					<li data-role="list-divider">TASKS DUE TODAY!</li>
+					<li class="due">Pick up kids - 3:15p</li>
+					<li class="due">Project 2 - 11:59p</li>
+					<li class="due">Project 2 Review Video - 11:59p</li>
+					<li class="due">Week 2 Discussion Video - 11:59p</li>
+					<li data-role="list-divider">Tasks due later</li>
+					<li>Drumline Auditions</li>
+					<li>Inventory</li>
 					<li>Pick up kids</li>
+					<li>Mow Lawn</li>
+					<li>Pick up kids</li>
+					<li>Plant Flowers</li>
+					<li>Fix Wall</li>
+					<li>Pick up kids</li>
+					<li>Pick up Kids</li>
+					<li>Dentist</li>
+					<li>Dr. Aung</li>
+					<li>Bacon</li>
+					<li>Eggs</li>
+					<li>Bread</li>
+					<li>Milk</li>
+					<li>Cheese</li>
 				</ul>
 			</div>
-			<div data-role="footer" data-position="fixed" data-theme="a">
-				<div data-role="navbar" data-iconpos="right" data-theme="a">
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<div data-role="navbar" data-iconpos="right" data-theme="b">
 					<ul>
 						<li><a href="#home">Back</a></li>
 						<li><a href="additem.html" data-ajax="false">Add New Item</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** Page 3 (info) ** -->
+		<div data-role="page" data-theme="a" id="info">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div id="copyright" data-role="content" data-theme="b">
+				<h1>Fruition Info</h1>
+				<p class="left">Author: Philip Ainsworth<br />Class: Mobile Interfaces and Usability<br />Session: 1206<br />Week: 2</p>
+				<p>This app is protected under federal copyright laws.</p>
+				<p>Copyright © 2012  Ainsworth Design Technology - All Rights Reserved</p>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="b">
+				<div data-role="navbar" data-iconpos="right" data-theme="b">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse">Back</a></li>
 					</ul>
 				</div>
 			</div>
