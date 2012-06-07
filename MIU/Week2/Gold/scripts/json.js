@@ -1,5 +1,5 @@
 /*
-		Title: Fruition
+		Title: Fruition (Gold)
 		Author: Philip Ainsworth
 		Class: Mobile Interfaces and Usability
 		Session: 1206
