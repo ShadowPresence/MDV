@@ -18,28 +18,36 @@
 		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
 		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
 		<meta name="robots" content="index, follow"/>
+<!-- ** CSS ** -->
 		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
 		<link rel="stylesheet" href="css/themes/fruition.min.css" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<script src="scripts/libs/modernizr.custom.min.js"></script>
 		<title>Fruition</title>
 	</head>
+<<<<<<< HEAD
 	<body onLoad="listDataByCategory()">
+=======
+	<body onLoad="listDataByCategory(), listDataByProject()">
+>>>>>>> origin/gh-pages
 <!-- ** Page 1 (home) ** -->
 		<div data-role="page" data-theme="d" id="home">
+	<!-- ** HEADER ** -->
 			<div data-role="header">
 				<div id="logo1">
-					<a href="#due" id="realBig" style="float: left">4</a>
+					<a href="#due" id="realBig" style="float: left" data-transition="slide">4</a>
 					<h3 id="text">Tasks Due!</h3>
-					<span id="subheading">Click number for details.</span>
+					<span id="subheading">Finally, an app that helps maximize your time!</span>
 				</div>
 			</div>
+	<!-- ** CONTENT ** -->
 			<div data-role="content">
 				<ul data-role="listview" data-filter="true"></ul>
 				<div data-role="collapsible-set">
 					<div data-role="collapsible" data-collapsed="true">
 						<h3>Category</h3>
 						<div id="catHanger" data-role="collapsible-set" data-inset="true" data-theme="a">
+<<<<<<< HEAD
 							<div id="cat1" data-role="collapsible">
 								<h3>Home</h3>
 							</div>
@@ -48,60 +56,66 @@
 							</div>
 						</div>
 						$('#catHanger').listview('refresh');
+=======
+							<div data-role="collapsible">
+								<h3>Home</h3>
+								<ul id="cat1" data-role="listview" data-inset="true" data-theme="a">
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Work</h3>
+								<ul id="cat2" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+						</div>
+>>>>>>> origin/gh-pages
 					</div>
 					<div data-role="collapsible" data-collapsed="true">
 						<h3>Projects</h3>
-						<div data-role="collapsible-set" data-inset="true" data-theme="a">
+						<div id="proHanger" data-role="collapsible-set" data-inset="true" data-theme="a">
 							<div data-role="collapsible">
-								<h3>Shopping</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Bread</li>
-									<li>Milk</li>
-									<li>Cheese</li>
-								</ul>
+								<h3 id="p1h">Shopping</h3>
+								<ul id="pro1" data-role="listview" data-inset="true" data-theme="a"></ul>
 							</div>
 							<div data-role="collapsible">
-								<h3>Homework</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Project 1</li>
-									<li>Video Review</li>
-									<li>Video Discussion</li>
-								</ul>
+								<h3 id="p2h">Homework</h3>
+								<ul id="pro2" data-role="listview" data-inset="true" data-theme="a"></ul>
 							</div>
 							<div data-role="collapsible">
-								<h3>Scheduled</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Pick up kids</li>
-									<li>Band Practice</li>
-								</ul>
+								<h3 id="p3h">Scheduled</h3>
+								<ul id="pro3" data-role="listview" data-inset="true" data-theme="a"></ul>
 							</div>
 							<div data-role="collapsible">
-								<h3>Appointments</h3>
-								<ul data-role="listview" data-inset="true" data-theme="a">
-									<li>Dentist</li>
-									<li>Interview</li>
-								</ul>
+								<h3 id="p4h">Appointment</h3>
+								<ul id="pro4" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p5h">Household</h3>
+								<ul id="pro5" data-role="listview" data-inset="true" data-theme="a"></ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div data-role="footer" data-position="fixed">
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed">
 				<div data-role="navbar" data-iconpos="right">
 					<ul>
-						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add New Item</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
+						<li><a href="#info" data-icon="info" data-transition="slideup">Info</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+						<li><a href="#home" data-icon="delete" onclick="clearData()">Clear All</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 <!-- ** Page 2 (due) ** -->
 		<div data-role="page" data-theme="a" id="due">
+	<!-- ** HEADER ** -->
 			<div data-role="header">
 				<div id="logo">
 				</div>
 			</div>
-			<div data-role="content" data-theme="a">
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="d">
 				<ul data-role="listview" data-filter="true">
 					<li data-role="list-divider">THE FOLLOWING TASKS ARE DUE!</li>
 					<li>MIU Project 1</li>
@@ -110,39 +124,49 @@
 					<li>Pick up kids</li>
 				</ul>
 			</div>
-			<div data-role="footer" data-position="fixed" data-theme="a">
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
 				<div data-role="navbar" data-iconpos="right" data-theme="a">
 					<ul>
-						<li><a href="#home">Back</a></li>
-						<li><a href="additem.html" data-ajax="false">Add New Item</a></li>
+						<li><a href="#home" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+						<li><a href="#home" data-icon="delete" onclick="clearData()">Clear All</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 <!-- ** Page 3 (info) ** -->
-		<div data-role="page" data-theme="a" id="info">
+		<div data-role="page" data-theme="d" id="info">
+	<!-- ** HEADER ** -->
 			<div data-role="header">
 				<div id="logo">
 				</div>
 			</div>
-			<div data-role="content" data-theme="c">
-				<ul data-role="listview" data-filter="true">
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-divider-theme="c">
 					<li data-role="list-divider">Github links</li>
 					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Gold/index.html">Live Page</a></li>
 					<li><a href="https://github.com/ShadowPresence/MDV/tree/master/MIU">Github account</a></li>
 					<li data-role="list-divider">Other Apps</li>
-					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Bronze/index.html">Github account</a></li>
+					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Bronze/index.html">Bronze App</a></li>
 				</ul>
 			</div>
-			<div data-role="footer" data-position="fixed" data-theme="a">
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
 				<div data-role="navbar" data-iconpos="right" data-theme="a">
 					<ul>
-						<li><a href="#home">Back</a></li>
-						<li><a href="additem.html" data-ajax="false">Add New Item</a></li>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse">Back</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+						<li><a href="#home" data-icon="arrow-d" onclick="autofill()">Load Data</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
+=======
+<!-- ** SCRIPTS ** -->
+>>>>>>> origin/gh-pages
         <script src="scripts/json.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/dataQuery.js"></script>

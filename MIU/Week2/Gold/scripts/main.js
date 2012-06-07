@@ -10,7 +10,11 @@ var rangeGo = function (newValue) {
 	document.getElementById('rangeValue').innerHTML = newValue;
 };
 
+<<<<<<< HEAD
 window.addEventListener("DOMContentLoaded", function () {
+=======
+//window.addEventListener("DOMContentLoaded", function () {
+>>>>>>> origin/gh-pages
 	
 	// Element shortcut
 	var gid = function (x) {
@@ -40,14 +44,23 @@ window.addEventListener("DOMContentLoaded", function () {
 		switch(t){
 			case "on":
 				gid('item').style.display = "none";
+<<<<<<< HEAD
 				gid('clear').style.paddingLeft = "0";
 				gid('clear').style.display = "block";
+=======
+				// gid('clear').style.paddingLeft = "0";
+				// gid('clear').style.display = "block";
+>>>>>>> origin/gh-pages
 				gid('newQuack').style.display = "block";
 				gid('display').style.display = "none";
 				break;
 			case "off":
 				gid('item').style.display = "block";
+<<<<<<< HEAD
 				gid('clear').style.display = "inline";
+=======
+				// gid('clear').style.display = "inline";
+>>>>>>> origin/gh-pages
 				gid('display').style.display = "inline";
 				gid('newQuack').style.display = "none";
 				gid('data').style.display = "none";
@@ -215,6 +228,11 @@ window.addEventListener("DOMContentLoaded", function () {
 			var id = Math.floor(Math.random()*1000000);
 			localStorage.setItem(id, JSON.stringify(instaBusy[n]));
 		};
+<<<<<<< HEAD
+=======
+		window.location.reload();
+		alert("Test data has been loaded.");
+>>>>>>> origin/gh-pages
 	};
 
 	//Local Storage check
@@ -258,9 +276,16 @@ window.addEventListener("DOMContentLoaded", function () {
 	//Click events
 	var display = gid('display');
 	display.addEventListener("click", lsc);
+<<<<<<< HEAD
 	var clearD = gid('clear');
 	clearD.addEventListener("click", clearData);
 	var saveD = gid('submit');
 	saveD.addEventListener("click", validate);
 
 })
+=======
+	// var clearD = gid('clear');
+	// clearD.addEventListener("click", clearData);
+	var saveD = gid('submit');
+	saveD.addEventListener("click", validate);
+>>>>>>> origin/gh-pages
