@@ -1,9 +1,9 @@
 /*
-		Title: Fruition
+		Title: Fruition (Gold)
 		Author: Philip Ainsworth
 		Class: Mobile Interfaces and Usability
 		Session: 1206
-		Week: 1
+		Week: 2
 */
 
 var instaBusy = {

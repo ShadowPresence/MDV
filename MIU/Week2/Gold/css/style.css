@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /*
-		Title: Fruition
+		Title: Fruition (Gold)
 		Author: Philip Ainsworth
 		Class: Mobile Interfaces and Usability
 		Session: 1206
-		Week: 1
+		Week: 2
 */
 
 /* Colors:
@@ -63,7 +63,7 @@
 }
 
 .due {
-	color: #A11D21;
+	color: #CC252A;
 }
 
 #logo {

@@ -1,9 +1,9 @@
 /*
-	Title: ProDucktive
-	Author: Philip Ainsworth
-	Class: Visual Frameworks
-	Session: 1205
-	Week: 3
+		Title: Fruition (Gold)
+		Author: Philip Ainsworth
+		Class: Mobile Interfaces and Usability
+		Session: 1206
+		Week: 2
 */
 
 // Element shortcut
