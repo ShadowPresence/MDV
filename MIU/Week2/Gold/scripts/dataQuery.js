@@ -11,8 +11,10 @@
 		var element = document.getElementById(x);
 		return element;
 	};
+
+// Future functionality
 	
-	var createProList = function () {
+	/*var createProList = function () {
 		for(i=0; i<localStorage.length; i++) {
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -33,7 +35,7 @@
 			};
 		};
 		
-	};
+	};*/
 
 
 	//Create list

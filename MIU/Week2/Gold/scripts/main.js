@@ -10,7 +10,7 @@ var rangeGo = function (newValue) {
 	document.getElementById('rangeValue').innerHTML = newValue;
 };
 
-window.addEventListener("DOMContentLoaded", function () {
+//window.addEventListener("DOMContentLoaded", function () {
 	
 	// Element shortcut
 	var gid = function (x) {
@@ -40,14 +40,14 @@ window.addEventListener("DOMContentLoaded", function () {
 		switch(t){
 			case "on":
 				gid('item').style.display = "none";
-				gid('clear').style.paddingLeft = "0";
-				gid('clear').style.display = "block";
+				// gid('clear').style.paddingLeft = "0";
+				// gid('clear').style.display = "block";
 				gid('newQuack').style.display = "block";
 				gid('display').style.display = "none";
 				break;
 			case "off":
 				gid('item').style.display = "block";
-				gid('clear').style.display = "inline";
+				// gid('clear').style.display = "inline";
 				gid('display').style.display = "inline";
 				gid('newQuack').style.display = "none";
 				gid('data').style.display = "none";
@@ -215,6 +215,8 @@ window.addEventListener("DOMContentLoaded", function () {
 			var id = Math.floor(Math.random()*1000000);
 			localStorage.setItem(id, JSON.stringify(instaBusy[n]));
 		};
+		window.location.reload();
+		alert("Test data has been loaded.");
 	};
 
 	//Local Storage check
@@ -258,9 +260,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	//Click events
 	var display = gid('display');
 	display.addEventListener("click", lsc);
-	var clearD = gid('clear');
-	clearD.addEventListener("click", clearData);
+	// var clearD = gid('clear');
+	// clearD.addEventListener("click", clearData);
 	var saveD = gid('submit');
 	saveD.addEventListener("click", validate);
-
-})

@@ -36,15 +36,15 @@
 
 #realBig {
 	position: absolute;
-	margin: 20px 0px 0px 32px;
+	margin: 30px 0px 0px 50px;
 	color: #A11D21;
 	text-decoration: none;
-	font: 96pt "Informal";
+	font: 76pt "Informal";
 }
 
 #text {
 	position: absolute;
-	margin: 119px 0px 0px 140px;
+	margin: 100px 0px 0px 140px;
 	color: #510f10;
 	font-weight: normal;
 	text-shadow: none;
@@ -54,14 +54,15 @@
 
 #subheading {
 	position: absolute;
-	margin-top: 143px;
-	margin-left: 122px;
+	margin-top: 135px;
+	margin-left: 10px;
 	color: #510f10;
+	font-size: 11pt;
 	font-weight: normal;
 	text-shadow: none;
 }
 
-.logo {
+#logo {
 	background-color: #E9ECDE;
 	background-image: url(../img/fruition.png);
 	background-repeat: no-repeat;
