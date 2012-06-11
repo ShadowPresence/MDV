@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 
 <!--
-		Title: ProDucktive
-		Author: Philip Ainsworth
-		Class: Visual Frameworks
-		Session: 1205
-		Week: 3
+        Title: Fruition (Gold)
+        Author: Philip Ainsworth
+        Class: Mobile Interfaces and Usability
+        Session: 1206
+        Week: 2
 -->
 
 <html>
@@ -18,20 +18,18 @@
 		<meta name="description" content="ProDucktive web App. Productivity software to help track your life."/>
 		<meta name="keywords" content="productive, producktive, productivity, organization, organize, todo, list, track"/>
 		<meta name="robots" content="index, follow"/>
-		<link rel="stylesheet" href="css/style.css" type="text/css"/>
-        <script src="scripts/json.js"></script>
-        <script src="scripts/main.js"></script>
-		<title>Add New Quacker Tracker</title>
+		<link rel="stylesheet" href="css/old.css" type="text/css"/>
+		<title>Add New Task</title>
 	</head>
 
 	<body>
 		<header>
-			<img src="img/proDUCKtive.png" alt="ProDucktive" width="300">
+			<img src="img/fruition.png" alt="ProDucktive">
 			<h3>Finally, an app that allows you to get the most out of your time!</h3>
 		</header>
 		<form action="#" method="post" name="item" id="item">
 			<fieldset id="fullForm">
-				<legend> New Quacker Tracker </legend>
+				<legend>New Task</legend>
 				<span>Fields marked with a * are required.</span>
 				<ul id="errors"></ul>
 				<label for="taskName">* Name:</label>
@@ -73,13 +71,15 @@
                 <input name="range" type="range" min="0" max="10" value="5" id="priority" class="break" onchange="rangeGo(this.value)">
 				<input name="hidden" type="hidden" id="hidden" class="break">
 			</fieldset>
-			<input type="button" id="submit" class="break" value="Add New Quacker Tracker">
+			<input type="button" id="submit" class="break" value="Add New Task">
 		</form>
         <a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
         <div id="data"></div>
 		<div id="nav">
-        	<a href="#" id="clear" name="clear">Clear List</a>
+        	<a href="index.html">Back</a>
 			<a href="#" id="display" name="display">Show Task List</a>
         </div>
+        <script src="scripts/json.js"></script>
+        <script src="scripts/main.js"></script>
 	</body>
 </html>

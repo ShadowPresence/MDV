@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<!--
+        Title: Fruition (Gold)
+        Author: Philip Ainsworth
+        Class: Mobile Interfaces and Usability
+        Session: 1206
+        Week: 2
+-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="robots" content="index, follow"/>
+<!-- ** CSS ** -->
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/themes/fruition.min.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="scripts/libs/modernizr.custom.min.js"></script>
+		<title>Fruition</title>
+	</head>
+	<body onLoad="listDataByCategory(), listDataByProject()">
+<!-- ** Page 1 (home) ** -->
+		<div data-role="page" data-theme="d" id="home">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo1">
+					<a href="#due" id="realBig" style="float: left" data-transition="slide">4</a>
+					<h3 id="text">Tasks Due!</h3>
+					<span id="subheading">Finally, an app that helps maximize your time!</span>
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true"></ul>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Category</h3>
+						<div id="catHanger" data-role="collapsible-set" data-inset="true" data-theme="a">
+							<div data-role="collapsible">
+								<h3>Home</h3>
+								<ul id="cat1" data-role="listview" data-inset="true" data-theme="a">
+								</ul>
+							</div>
+							<div data-role="collapsible">
+								<h3>Work</h3>
+								<ul id="cat2" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+						</div>
+					</div>
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Projects</h3>
+						<div id="proHanger" data-role="collapsible-set" data-inset="true" data-theme="a">
+							<div data-role="collapsible">
+								<h3 id="p1h">Shopping</h3>
+								<ul id="pro1" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p2h">Homework</h3>
+								<ul id="pro2" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p3h">Scheduled</h3>
+								<ul id="pro3" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p4h">Appointment</h3>
+								<ul id="pro4" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p5h">Household</h3>
+								<ul id="pro5" data-role="listview" data-inset="true" data-theme="a"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li><a href="#info" data-icon="info" data-transition="slideup">Info</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+						<li><a href="#home" data-icon="delete" onclick="clearData()">Clear All</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** Page 2 (due) ** -->
+		<div data-role="page" data-theme="d" id="due">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-divider-theme="c" data-filter="true">
+					<li data-role="list-divider">TASKS DUE TODAY!</li>
+					<li class="due">Pick up kids - 3:15p</li>
+					<li class="due">Project 2 - 11:59p</li>
+					<li class="due">Project 2 Review Video - 11:59p</li>
+					<li class="due">Week 2 Discussion Video - 11:59p</li>
+					<li data-role="list-divider">Tasks due later</li>
+					<li>Drumline Auditions</li>
+					<li>Inventory</li>
+					<li>Pick up kids</li>
+					<li>Mow Lawn</li>
+					<li>Pick up kids</li>
+					<li>Plant Flowers</li>
+					<li>Fix Wall</li>
+					<li>Pick up kids</li>
+					<li>Pick up Kids</li>
+					<li>Dentist</li>
+					<li>Dr. Aung</li>
+					<li>Bacon</li>
+					<li>Eggs</li>
+					<li>Bread</li>
+					<li>Milk</li>
+					<li>Cheese</li>
+				</ul>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+						<li><a href="#home" data-icon="delete" onclick="clearData()">Clear All</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** Page 3 (info) ** -->
+		<div data-role="page" data-theme="d" id="info">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-divider-theme="c">
+					<li data-role="list-divider">Github links</li>
+					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Gold/index.html">Gold Live Page</a></li>
+					<li><a href="https://github.com/ShadowPresence/MDV/tree/master/MIU">Github account</a></li>
+					<li data-role="list-divider">Other Apps</li>
+					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Bronze/index.html">Bronze App</a></li>
+				</ul>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse">Back</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+						<li><a href="#home" data-icon="arrow-d" onclick="autofill()">Load Data</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** SCRIPTS ** -->
+        <script src="scripts/json.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/dataQuery.js"></script>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	</body>
+</html>

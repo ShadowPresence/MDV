@@ -1,16 +1,16 @@
 /*
-        Title: ProDucktive
+        Title: Fruition (Bronze)
         Author: Philip Ainsworth
-        Class: Visual Frameworks
-        Session: 1205
-        Week: 3
+        Class: Mobile Interfaces and Usability
+        Session: 1206
+        Week: 2
 */
 
 var rangeGo = function (newValue) {
     document.getElementById('rangeValue').innerHTML = newValue;
 };
 
-window.addEventListener("DOMContentLoaded", function () {
+//window.addEventListener("DOMContentLoaded", function () {
     
     // Element shortcut
     var $ = function (x) {
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     // Variables
-    var projectGroup = ["None", "Project1", "Project2"],
+    var projectGroup = ["None", "Shopping", "Homework", "Scheduled", "Appointments"],
         catValue,
         errMsg = $('errors');
 
@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var errorArray = [];
         if (getTaskName.value === "") {
             var tnError = "Please enter a task name.";
-            getTaskName.style.border = "1px solid red";
+            getTaskName.style.border = "1px solid #CC252A";
             errorArray.push(tnError);
         };
         if (errorArray.length >=1) {
@@ -215,6 +215,8 @@ window.addEventListener("DOMContentLoaded", function () {
             var id = Math.floor(Math.random()*1000000);
             localStorage.setItem(id, JSON.stringify(instaBusy[n]));
         };
+        window.location.reload();
+        alert("Test data has been loaded.");
     };
 
     //Local Storage check
@@ -263,4 +265,4 @@ window.addEventListener("DOMContentLoaded", function () {
     var saveD = $('submit');
     saveD.addEventListener("click", validate);
 
-})
+//})
