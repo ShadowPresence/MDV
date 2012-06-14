@@ -5,7 +5,7 @@
 		Author: Philip Ainsworth
 		Class: Mobile Interfaces and Usability
 		Session: 1206
-		Week: 2
+		Week: 3
 -->
 
 <html>
@@ -31,7 +31,7 @@
 	<!-- ** HEADER ** -->
 			<div data-role="header">
 				<div id="logo1">
-					<a href="#due" id="realBig" style="float: left" data-transition="slide">4</a>
+					<a href="#due" id="realBig" style="float: left" data-transition="slidedown">4</a>
 					<h3 id="text">Tasks Due!</h3>
 					<span id="subheading">Finally, an app that helps maximize your time!</span>
 				</div>
@@ -86,8 +86,8 @@
 				<div data-role="navbar" data-iconpos="right">
 					<ul>
 						<li><a href="#info" data-icon="info" data-transition="slideup">Info</a></li>
-						<li><a href="#form" data-icon="plus" data-transition="slide">Add Item</a></li>
-						<li><a href="#listDetail" data-icon="arrow-u" onclick="lsc()">Show List</a></li>
+						<li><a href="list.html" data-icon="plus" data-transition="slide">Add Item</a></li>
+						<li><a href="#due" data-icon="arrow-d" data-transition="slidedown">Due</a></li>
 					</ul>
 				</div>
 			</div>
@@ -130,9 +130,9 @@
 			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
 				<div data-role="navbar" data-iconpos="right" data-theme="a">
 					<ul>
-						<li><a href="#home" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
-						<li><a href="#form" data-icon="plus" data-transition="slidedown">Add Item</a></li>
-						<li><a href="#home" data-icon="delete" onclick="clearData()">Clear All</a></li>
+						<li><a href="#home" data-icon="back" data-transition="slidedown" data-direction="reverse">Back</a></li>
+						<li><a href="list.html" data-icon="plus" data-transition="slide">Add Item</a></li>
+						<li><a href="#" data-icon="plus" data-transition="slidedown">??</a></li>
 					</ul>
 				</div>
 			</div>
@@ -145,7 +145,11 @@
 				</div>
 			</div>
 	<!-- ** CONTENT ** -->
-			<div data-role="content" data-theme="a">
+			<div data-role="content" data-theme="a" id="copyright">
+				<h1>Fruition Info</h1>
+				<p class="left">Author: Philip Ainsworth<br />Class: Mobile Interfaces and Usability<br />Session: 1206<br />Week: 3</p>
+				<p>This app is protected under federal copyright laws.</p>
+				<p>Copyright © 2012  Ainsworth Design Technology - All Rights Reserved</p>
 				<ul data-role="listview" data-divider-theme="c">
 					<li data-role="list-divider">Github links</li>
 					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Gold/index.html">Gold Live Page</a></li>
@@ -159,116 +163,8 @@
 				<div data-role="navbar" data-iconpos="right" data-theme="a">
 					<ul>
 						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse">Back</a></li>
-						<li><a href="#form" data-icon="plus" data-transition="slide">Add Item</a></li>
+						<li><a href="#home" data-icon="delete" onclick="clearData()">Clear All</a></li>
 						<li><a href="#home" data-icon="arrow-d" onclick="autofill()">Load Data</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-<!-- ** Page 4 (form) ** -->
-		<div data-role="page" data-theme="d" id="form">
-	<!-- ** HEADER ** -->
-			<div data-role="header">
-				<div id="logo"></div>
-			</div>
-	<!-- ** CONTENT ** -->
-			<div data-role="content" data-theme="a">
-				<form action="#" method="post" name="item" id="item">
-					<legend>New Task</legend>
-					<span>Fields marked with a * are required.</span>
-					<div data-role="fieldcontain">
-						<label for="taskName">* Name:</label>
-						<input type="text" name="taskName" id="taskName" class="required" data-mini="true">
-					</div>
-		<!-- ** CATEGORIES ** -->
-					<div data-role="fieldcontain">
-						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-							<legend>Category:</legend>
-							<label for="category_0">Home</label>
-							<input type="radio" name="category" value="Home" id="category_0">
-							<label for="category_1">Work</label>
-							<input type="radio" name="category" value="Work" id="category_1">
-						</fieldset>
-					</div>
-		<!-- ** PROJECTS ** -->
-					<div data-role="fieldcontain">
-						<fieldset data-role="controlgroup" data-mini="true">
-							<label for="projects">Project:</label>
-							<select name="projects" id="projects">
-								<option selected>None</option>
-							</select>
-						</fieldset>
-					</div>
-		<!-- ** DATES & TIMES ** -->
-		<!-- ** START ** -->
-					<div data-role="fieldcontain">
-						<div>
-							<label for="startDate">Start Date:</label>
-							<input name="startDate" value="today" type="datetime-local" id="startDate" data-mini="true">
-						</div>
-		<!-- ** DUE ** -->
-						<div>
-							<label for="dueDate">Due Date:</label>
-							<input name="dueDate" type="datetime-local" id="dueDate" data-mini="true">
-						</div>
-					</div>
-					<label for="notes" class="break">Notes:</label>
-					<textarea name="notes" id="notes" class="break" data-mini="true">A place to add notes</textarea>
-		<!-- ** PRIORITY ** -->
-					<div data-role="fieldcontain">
-						<label for="priority">Priority:</label>
-						<input name="priority" type="range" min="0" max="10" value="5" id="priority" data-mini="true">
-					</div>
-					<input type="submit" id="submit" value="Add New Task" onclick="storeData()" data-theme="c">
-				</form>
-			</div>
-	<!-- ** FOOTER ** -->
-			<div data-role="footer" data-id="nav" data-position="fixed">
-				<div data-role="navbar" data-iconpos="right">
-					<ul>
-						<li><a href="#home" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
-						<!-- <li><a href="additem.html" data-icon="plus">Add Item</a></li> -->
-						<li><a href="#listDetail" data-icon="arrow-u" data-transition="slide" onclick="lsc()">Show List</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-<!-- ** Page 5 (listDetail) ** -->
-		<div data-role="page" data-theme="a" id="listDetail">
-	<!-- ** HEADER ** -->
-			<div data-role="header">
-				<div id="logo"></div>
-			</div>
-	<!-- ** CONTENT ** -->
-			<div data-role="content">
-				<div id="data"></div>
-			</div>
-	<!-- ** FOOTER ** -->
-			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
-				<div data-role="navbar" data-iconpos="right" data-theme="a">
-					<ul>
-						<li><a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a></li>
-						<li><a href="#form" data-icon="plus" data-transition="slidedown">Add Item</a></li>
-						<li><a href="#listDetail" data-icon="delete" onclick="clearData()">Clear All</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-<!-- ** Page 6 (confirm) ** -->
-		<div data-role="page" data-theme="a" id="confirm">
-	<!-- ** HEADER ** -->
-			<div data-role="header">
-				<div id="logo"></div>
-			</div>
-	<!-- ** CONTENT ** -->
-			<div data-role="content">Submission complete!</div>
-	<!-- ** FOOTER ** -->
-			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
-				<div data-role="navbar" data-iconpos="right" data-theme="a">
-					<ul>
-						<li><a href="#home" data-icon="home" data-transition="slide" data-direction="reverse">Home</a></li>
-						<li><a href="#form" data-icon="plus" data-transition="slidedown">Add Item</a></li>
-						<li><a href="#listDetail" data-icon="delete" onclick="clearData()">Clear All</a></li>
 					</ul>
 				</div>
 			</div>

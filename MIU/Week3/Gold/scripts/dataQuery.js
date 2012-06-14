@@ -37,16 +37,19 @@ var gid = function (x) {
 	
 };*/
 
+var	cat1Array = [],
+	cat2Array = [],
+	pro1Array = [],
+	pro2Array = [],
+	pro3Array = [],
+	pro4Array = [],
+	pro5Array = [];
 
-//Create list
-var listDataByCategory = function () {
-	var getHanger = gid('catHanger');
+var makeCatArray = function() {
 	for(var i=0; i<localStorage.length; i++) {
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
 		var obj = JSON.parse(value);
-		var cat1Array = [];
-		var cat2Array = [];
 		for (var n in obj) {
 			if (obj[n][1] === "Home") {
 				cat1Array.push(obj['taskName'][1]);
@@ -54,35 +57,14 @@ var listDataByCategory = function () {
 				cat2Array.push(obj['taskName'][1]);
 			};
 		};
-		var cat1List = gid('cat1');
-		var cat2List = gid('cat2');
-		for (var f = 0; f < cat1Array.length; f++) {
-			var listing = document.createElement('li');
-			cat1List.appendChild(listing);
-			listing.innerHTML = cat1Array[f];
-			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-		};
-		for (var f = 0; f < cat2Array.length; f++) {
-			var listing = document.createElement('li');
-			cat2List.appendChild(listing);
-			listing.innerHTML = cat2Array[f];
-			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-		};
 	};
-	$("#catHanger").trigger('create');
-};
+}
 
-var listDataByProject = function () {
-	var getHanger = gid('proHanger');
+var makeProArray = function() {
 	for(var i=0; i<localStorage.length; i++) {
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
 		var obj = JSON.parse(value);
-		var pro1Array = [];
-		var pro2Array = [];
-		var pro3Array = [];
-		var pro4Array = [];
-		var pro5Array = [];
 		for (var n in obj) {
 			if (obj[n][1] === "Shopping") {
 				pro1Array.push(obj['taskName'][1]);
@@ -96,55 +78,95 @@ var listDataByProject = function () {
 				pro5Array.push(obj['taskName'][1]);
 			};
 		};
-		var pro1List = gid('pro1'), pro2List = gid('pro2'), pro3List = gid('pro3'), pro4List = gid('pro4'), pro5List = gid('pro5'), f;
-		for (f = 0; f < pro1Array.length; f++) {
-			var listing = document.createElement('li');
-			pro1List.appendChild(listing);
-			listing.innerHTML = pro1Array[f];
-			/*if (f<1) {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-top");
-			} else if (f==pro1Array.length-1) {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
-			} else {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-			};*/
+	};
+};
+
+//Create list
+var listDataByCategory = function () {
+	var getHanger = gid('catHanger'),
+		cat1List = gid('cat1'),
+		cat2List = gid('cat2'),
+		stile = "ui-li ui-li-static ui-body-a";
+	makeCatArray();
+	for (var f=0; f<cat1Array.length; f++) {
+		if (f===cat1Array.length-1) {
+			stile = "ui-li ui-li-static ui-body-a ui-corner-bottom";
 		};
-		for (var f = 0; f < pro2Array.length; f++) {
-			var listing = document.createElement('li');
-			pro2List.appendChild(listing);
-			listing.innerHTML = pro2Array[f];
-			/*if (f<1) {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-top");
-			} else if (f==pro2Array.length) {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
-			} else {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-			};*/
+		var listing = document.createElement('li');
+		cat1List.appendChild(listing);
+		listing.setAttribute("class", stile);
+		listing.innerHTML = cat1Array[f];
+		stile = "ui-li ui-li-static ui-body-a";
+	};
+	for (var f=0; f<cat2Array.length; f++) {
+		if (f===cat2Array.length-1) {
+			stile = "ui-li ui-li-static ui-body-a ui-corner-bottom";
 		};
-		for (var f = 0; f < pro3Array.length; f++) {
-			var listing = document.createElement('li');
-			pro3List.appendChild(listing);
-			listing.innerHTML = pro3Array[f];
-			/*if (f<1) {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-top");
-			} else if (f==pro3Array.length) {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
-			} else {
-				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-			};*/
+		var listing = document.createElement('li');
+		cat2List.appendChild(listing);
+		listing.setAttribute("class", stile);
+		listing.innerHTML = cat2Array[f];
+	};
+	$("#catHanger").trigger('create');
+};
+
+var listDataByProject = function () {
+	var getHanger = gid('proHanger'),
+		pro1List = gid('pro1'),
+		pro2List = gid('pro2'),
+		pro3List = gid('pro3'),
+		pro4List = gid('pro4'),
+		pro5List = gid('pro5'),
+		stile = "ui-li ui-li-static ui-body-a";
+	makeProArray();
+	for (var f=0; f<pro1Array.length; f++) {
+		if (f===pro1Array.length-1) {
+			stile = "ui-li ui-li-static ui-body-a ui-corner-bottom";
 		};
-		for (var f = 0; f < pro4Array.length; f++) {
-			var listing = document.createElement('li');
-			pro4List.appendChild(listing);
-			listing.innerHTML = pro4Array[f];
-			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
+		var listing = document.createElement('li');
+		pro1List.appendChild(listing);
+		listing.setAttribute("class", stile);
+		listing.innerHTML = pro1Array[f];
+		stile = "ui-li ui-li-static ui-body-a";
+	};
+	for (var f=0; f<pro2Array.length; f++) {
+		if (f===pro2Array.length-1) {
+			stile = "ui-li ui-li-static ui-body-a ui-corner-bottom";
 		};
-		for (var f = 0; f < pro5Array.length; f++) {
-			var listing = document.createElement('li');
-			pro5List.appendChild(listing);
-			listing.innerHTML = pro5Array[f];
-			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
+		var listing = document.createElement('li');
+		pro2List.appendChild(listing);
+		listing.setAttribute("class", stile);
+		listing.innerHTML = pro2Array[f];
+		stile = "ui-li ui-li-static ui-body-a";
+	};
+	for (var f=0; f<pro3Array.length; f++) {
+		if (f===pro3Array.length-1) {
+			stile = "ui-li ui-li-static ui-body-a ui-corner-bottom";
 		};
+		var listing = document.createElement('li');
+		pro3List.appendChild(listing);
+		listing.setAttribute("class", stile);
+		listing.innerHTML = pro3Array[f];
+		stile = "ui-li ui-li-static ui-body-a";
+	};
+	for (var f=0; f<pro4Array.length; f++) {
+		if (f===pro4Array.length-1) {
+			stile = "ui-li ui-li-static ui-body-a ui-corner-bottom";
+		};
+		var listing = document.createElement('li');
+		pro4List.appendChild(listing);
+		listing.setAttribute("class", stile);
+		listing.innerHTML = pro4Array[f];
+		stile = "ui-li ui-li-static ui-body-a";
+	};
+	for (var f=0; f<pro5Array.length; f++) {
+		if (f===pro5Array.length-1) {
+			stile = "ui-li ui-li-static ui-body-a ui-corner-bottom";
+		};
+		var listing = document.createElement('li');
+		pro5List.appendChild(listing);
+		listing.setAttribute("class", stile);
+		listing.innerHTML = pro5Array[f];
 	};
 	$("#proHanger").trigger('create');
 };

@@ -83,6 +83,14 @@ form>legend {
 	font-size: 18pt;
 }
 
+#copyright {
+	text-align: center;
+}
+
+p.left {
+	text-align: left;
+}
+
 #logo {
 	background-color: #E9ECDE;
 	background-image: url(../img/fruition.png);

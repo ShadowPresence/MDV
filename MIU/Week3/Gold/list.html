@@ -1,33 +1,31 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <!--
 		Title: Fruition (Gold)
 		Author: Philip Ainsworth
 		Class: Mobile Interfaces and Usability
 		Session: 1206
-		Week: 2
+		Week: 3
 -->
 
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="viewport" content="target-densitydpi=device-dpi"/>
-		<meta name="HandheldFriendly" content="true"/>
+		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320"/>
-		<meta name="description" content="ProDucktive web App. Productivity software to help track your life."/>
-		<meta name="keywords" content="productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
 		<meta name="robots" content="index, follow"/>
 <!-- ** CSS ** -->
 		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
 		<link rel="stylesheet" href="css/themes/fruition.min.css" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<script src="scripts/libs/modernizr.custom.min.js"></script>
-		<!-- <link rel="stylesheet" href="css/old.css" type="text/css"/> -->
-		<title>Add New Task</title>
+		<title>Fruition</title>
 	</head>
-
-	<body onLoad="project()">
+	<body>
 <!-- ** Page 1 (form) ** -->
 		<div data-role="page" data-theme="d" id="form">
 	<!-- ** HEADER ** -->
@@ -41,11 +39,11 @@
 					<span>Fields marked with a * are required.</span>
 					<div data-role="fieldcontain">
 						<label for="taskName">* Name:</label>
-						<input type="text" name="taskName" id="taskName" class="required">
+						<input type="text" name="taskName" id="taskName" class="required" data-mini="true">
 					</div>
 		<!-- ** CATEGORIES ** -->
 					<div data-role="fieldcontain">
-						<fieldset data-role="controlgroup" data-type="horizontal">
+						<fieldset data-role="controlgroup" data-mini="true">
 							<legend>Category:</legend>
 							<label for="category_0">Home</label>
 							<input type="radio" name="category" value="Home" id="category_0">
@@ -55,7 +53,7 @@
 					</div>
 		<!-- ** PROJECTS ** -->
 					<div data-role="fieldcontain">
-						<fieldset data-role="controlgroup">
+						<fieldset data-role="controlgroup" data-mini="true">
 							<label for="projects">Project:</label>
 							<select name="projects" id="projects">
 								<option selected>None</option>
@@ -65,55 +63,33 @@
 		<!-- ** DATES & TIMES ** -->
 		<!-- ** START ** -->
 					<div data-role="fieldcontain">
-						<legend>Start</legend>
 						<div>
-							<label for="startDate">Date:</label><br />
-							<input name="startDate" type="datetime-local" id="startDate">
+							<label for="startDate">Start Date:</label>
+							<input name="startDate" value="today" type="datetime-local" id="startDate" data-mini="true">
 						</div>
 		<!-- ** DUE ** -->
-						<legend>Due</legend>
 						<div>
-							<label for="dueDate">Date:</label><br />
-							<input name="dueDate" type="datetime-local" id="dueDate">
+							<label for="dueDate">Due Date:</label>
+							<input name="dueDate" type="datetime-local" id="dueDate" data-mini="true">
 						</div>
 					</div>
-					
-		<!-- ** PRIORITY ** -->
 					<label for="notes" class="break">Notes:</label>
-					<textarea name="notes" id="notes" class="break">A place to add notes</textarea>
-					<label>Priority:</label>
-					<input name="range" type="range" min="0" max="10" value="5" id="priority">
-					<input name="hidden" type="hidden" id="hidden" class="break">
-					<input type="submit" id="submit" value="Add New Task">
+					<textarea name="notes" id="notes" class="break" data-mini="true">A place to add notes</textarea>
+		<!-- ** PRIORITY ** -->
+					<div data-role="fieldcontain">
+						<label for="priority">Priority:</label>
+						<input name="priority" type="range" min="0" max="10" value="5" id="priority" data-mini="true">
+					</div>
+					<input type="submit" id="submit" value="Add New Task" onclick="storeData()" data-theme="c">
 				</form>
 			</div>
 	<!-- ** FOOTER ** -->
 			<div data-role="footer" data-id="nav" data-position="fixed">
 				<div data-role="navbar" data-iconpos="right">
 					<ul>
-						<li><a href="index.html" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
+						<li><a href="index.html?#home" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
 						<!-- <li><a href="additem.html" data-icon="plus">Add Item</a></li> -->
-						<li><a href="#listDetail" data-icon="arrow-u" onclick="lsc()">Show List</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-<!-- ** Page 2 (listDetail) ** -->
-		<div data-role="page" data-theme="a" id="listDetail">
-	<!-- ** HEADER ** -->
-			<div data-role="header">
-				<div id="logo"></div>
-			</div>
-	<!-- ** CONTENT ** -->
-			<a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
-			<div id="data"></div>
-	<!-- ** FOOTER ** -->
-			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
-				<div data-role="navbar" data-iconpos="right" data-theme="a">
-					<ul>
-						<li><a href="index.html" data-icon="back" data-transition="slide" data-direction="reverse">Home</a></li>
-						<li><a href="#form" data-icon="plus">Add Item</a></li>
-						<li><a href="#listDetail" data-icon="delete" onclick="clearData()">Clear All</a></li>
+						<li><a href="#" data-icon="arrow-u" data-transition="slide">??</a></li>
 					</ul>
 				</div>
 			</div>
@@ -127,3 +103,4 @@
 		<script src="scripts/dataQuery.js"></script>
 	</body>
 </html>
+
