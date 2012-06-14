@@ -41,7 +41,7 @@ var gid = function (x) {
 //Create list
 var listDataByCategory = function () {
 	var getHanger = gid('catHanger');
-	for(i=0; i<localStorage.length; i++) {
+	for(var i=0; i<localStorage.length; i++) {
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
 		var obj = JSON.parse(value);
@@ -60,21 +60,21 @@ var listDataByCategory = function () {
 			var listing = document.createElement('li');
 			cat1List.appendChild(listing);
 			listing.innerHTML = cat1Array[f];
-			listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
+			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
 		};
 		for (var f = 0; f < cat2Array.length; f++) {
 			var listing = document.createElement('li');
 			cat2List.appendChild(listing);
 			listing.innerHTML = cat2Array[f];
-			listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
+			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
 		};
 	};
-	
+	$("#catHanger").trigger('create');
 };
 
 var listDataByProject = function () {
 	var getHanger = gid('proHanger');
-	for(i=0; i<localStorage.length; i++) {
+	for(var i=0; i<localStorage.length; i++) {
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
 		var obj = JSON.parse(value);
@@ -101,49 +101,50 @@ var listDataByProject = function () {
 			var listing = document.createElement('li');
 			pro1List.appendChild(listing);
 			listing.innerHTML = pro1Array[f];
-			if (f<1) {
+			/*if (f<1) {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-top");
 			} else if (f==pro1Array.length-1) {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
 			} else {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-			};
+			};*/
 		};
 		for (var f = 0; f < pro2Array.length; f++) {
 			var listing = document.createElement('li');
 			pro2List.appendChild(listing);
 			listing.innerHTML = pro2Array[f];
-			if (f<1) {
+			/*if (f<1) {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-top");
 			} else if (f==pro2Array.length) {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
 			} else {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-			};
+			};*/
 		};
 		for (var f = 0; f < pro3Array.length; f++) {
 			var listing = document.createElement('li');
 			pro3List.appendChild(listing);
 			listing.innerHTML = pro3Array[f];
-			if (f<1) {
+			/*if (f<1) {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-top");
 			} else if (f==pro3Array.length) {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
 			} else {
 				listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
-			};
+			};*/
 		};
 		for (var f = 0; f < pro4Array.length; f++) {
 			var listing = document.createElement('li');
 			pro4List.appendChild(listing);
 			listing.innerHTML = pro4Array[f];
-			listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
+			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a");
 		};
 		for (var f = 0; f < pro5Array.length; f++) {
 			var listing = document.createElement('li');
 			pro5List.appendChild(listing);
 			listing.innerHTML = pro5Array[f];
-			listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
+			// listing.setAttribute("class", "ui-li ui-li-static ui-body-a ui-corner-bottom");
 		};
 	};
+	$("#proHanger").trigger('create');
 };

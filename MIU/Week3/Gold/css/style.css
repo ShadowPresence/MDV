@@ -66,6 +66,23 @@
 	color: #CC252A;
 }
 
+input.error {
+	-webkit-box-shadow: 0px 0px 12px #A11D21;
+}
+
+label.error {
+	margin: 10px 0px;
+	color: #A11D21;
+}
+
+form>span {
+	color: #A11D21;
+}
+
+form>legend {
+	font-size: 18pt;
+}
+
 #logo {
 	background-color: #E9ECDE;
 	background-image: url(../img/fruition.png);

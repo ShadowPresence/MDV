@@ -6,27 +6,32 @@
 		Week: 2
 */
 
-var rangeGo = function (newValue) {
-	document.getElementById('rangeValue').innerHTML = newValue;
-};
+$(document).bind('pageinit', function() {
+	var form = $('#item');
+	form.validate();
+});
 
-//window.addEventListener("DOMContentLoaded", function () {
-	
+	// Variables
+	var projectGroup = ["Shopping", "Homework", "Scheduled", "Appointment", "Household"],
+		catValue;
+
 	// Element shortcut
 	var gid = function (x) {
 		var element = document.getElementById(x);
 		return element;
 	};
 
-	// Variables
-	var projectGroup = ["None", "Shopping", "Homework", "Scheduled", "Appointments"],
-		catValue,
-		errMsg = gid('errors');
+	/*var buildProArray = function() {
+		for(var i=0; i<localStorage.length; i++) {
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			var obj = JSON.parse(value);
+	}*/
 
 	// Project selection
 	var project = function () {
 		var tag = gid('projects');
-		for (var i=0, j=projectGroup.length; i<j; i++) {
+		for (var i=0; i<projectGroup.length; i++) {
 			var makeOption = document.createElement('option');
 			var optText = projectGroup[i];
 			makeOption.setAttribute("value", optText);
@@ -34,33 +39,11 @@ var rangeGo = function (newValue) {
 			tag.appendChild(makeOption);
 		};
 	};
-	
-	// Toggle nav
-	var toggleControl = function (t) {
-		switch(t){
-			case "on":
-				gid('item').style.display = "none";
-				// gid('clear').style.paddingLeft = "0";
-				// gid('clear').style.display = "block";
-				gid('newQuack').style.display = "block";
-				gid('display').style.display = "none";
-				break;
-			case "off":
-				gid('item').style.display = "block";
-				// gid('clear').style.display = "inline";
-				gid('display').style.display = "inline";
-				gid('newQuack').style.display = "none";
-				gid('data').style.display = "none";
-				break;
-			default:
-				return false;
-		};
-	};
 
 	//Category
 	var getSelectedRadio = function () {
 		var radios = document.forms[0].category;
-		for(i=0; i<radios.length; i++) {
+		for(var i=0; i<radios.length; i++) {
 			if(radios[i].checked){
 				catValue = radios[i].value;
 			};
@@ -90,7 +73,7 @@ var rangeGo = function (newValue) {
 	};
 	
 	// Form Validation
-	var validate = function (e) {
+	/*var validate = function (e) {
 		var getTaskName = gid('taskName');
 		errMsg.innerHTML = "";
 		getTaskName.style.border = "";
@@ -111,7 +94,7 @@ var rangeGo = function (newValue) {
 		} else {
 			storeData(this.key);
 		};
-	};
+	};*/
 
 	// Button Magic
 	// Creates buttons using given attributes - saves on repeated code
@@ -129,7 +112,7 @@ var rangeGo = function (newValue) {
 	var editItem = function () {
 		var value = localStorage.getItem(this.key);
 		var item = JSON.parse(value);
-		toggleControl("off");
+		//toggleControl("off");
 		gid('taskName').value = item.taskName[1];
 		var radios = document.forms[0].category;
 		for (var i = 0; i < radios.length; i++) {
@@ -147,7 +130,7 @@ var rangeGo = function (newValue) {
 		gid('rangeValue').innerHTML = item.priority[1];
 		gid('submit').value = "Update Task";
 		var editSubmit = gid('submit');
-		editSubmit.addEventListener("click", validate);
+		editSubmit.addEventListener("click", storeData);
 		editSubmit.key = this.key;
 	};
 
@@ -176,10 +159,10 @@ var rangeGo = function (newValue) {
 	
 	//Get Data
 	var getData = function () {
-		toggleControl("on");
+		//toggleControl("on");
 		var getDiv = gid('data');
 		gid('data').style.display = "block";
-		for(i=0; i<localStorage.length; i++) {
+		for(var i=0; i<localStorage.length; i++) {
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);
@@ -231,9 +214,10 @@ var rangeGo = function (newValue) {
 				autofill();
 				getData();
 			} else {
-				alert('Please use the "Add New Quacker Tracker" button to add a new task.')
+				alert('Test data has not been loaded.')
 			};
 		};
+		return false;
 	};
 
 	//Clear Data
@@ -254,13 +238,14 @@ var rangeGo = function (newValue) {
 			};
 		};
 	};
-	
+
 	project();
-	
+
 	//Click events
-	var display = gid('display');
-	display.addEventListener("click", lsc);
+	// var display = gid('display');
+	// display.addEventListener("click", lsc);
 	// var clearD = gid('clear');
 	// clearD.addEventListener("click", clearData);
-	var saveD = gid('submit');
-	saveD.addEventListener("click", validate);
+	// var saveD = gid('submit');
+	// saveD.addEventListener("click", storeData);
+

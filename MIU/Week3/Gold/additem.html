@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 
 <!--
-        Title: Fruition (Gold)
-        Author: Philip Ainsworth
-        Class: Mobile Interfaces and Usability
-        Session: 1206
-        Week: 2
+		Title: Fruition (Gold)
+		Author: Philip Ainsworth
+		Class: Mobile Interfaces and Usability
+		Session: 1206
+		Week: 2
 -->
 
 <html>
@@ -18,68 +18,112 @@
 		<meta name="description" content="ProDucktive web App. Productivity software to help track your life."/>
 		<meta name="keywords" content="productive, producktive, productivity, organization, organize, todo, list, track"/>
 		<meta name="robots" content="index, follow"/>
-		<link rel="stylesheet" href="css/old.css" type="text/css"/>
+<!-- ** CSS ** -->
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/themes/fruition.min.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="scripts/libs/modernizr.custom.min.js"></script>
+		<!-- <link rel="stylesheet" href="css/old.css" type="text/css"/> -->
 		<title>Add New Task</title>
 	</head>
 
-	<body>
-		<header>
-			<img src="img/fruition.png" alt="ProDucktive">
-			<h3>Finally, an app that allows you to get the most out of your time!</h3>
-		</header>
-		<form action="#" method="post" name="item" id="item">
-			<fieldset id="fullForm">
-				<legend>New Task</legend>
-				<span>Fields marked with a * are required.</span>
-				<ul id="errors"></ul>
-				<label for="taskName">* Name:</label>
-				<input name="taskName" type="text" id="taskName">
-				<fieldset id="grouping">
-
-					<!-- ** CATEGORIES ** -->
-					<label>Category:</label>
-					<label for="category_0">Home</label>
-					<input type="radio" name="category" value="Home" id="category_0">
-					<label for="category_1">Work</label>
-					<input type="radio" name="category" value="Work" id="category_1"><br />
-
-					<!-- ** PROJECTS ** -->
-					<label for="projects">Project:</label>
-					<select name="projects" id="projects"></select>
-				</fieldset>
-				<!-- ** DATES & TIMES ** -->
-				<!-- ** START ** -->
-				<fieldset id="dtStart">
-					<legend>Start</legend>
-					<div>
-						<label for="startDate">Date:</label><br />
-						<input name="startDate" type="datetime-local" id="startDate">
+	<body onLoad="project()">
+<!-- ** Page 1 (form) ** -->
+		<div data-role="page" data-theme="d" id="form">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo"></div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<form action="#" method="post" name="item" id="item">
+					<legend>New Task</legend>
+					<span>Fields marked with a * are required.</span>
+					<div data-role="fieldcontain">
+						<label for="taskName">* Name:</label>
+						<input type="text" name="taskName" id="taskName" class="required">
 					</div>
-				</fieldset>
-				<!-- ** DUE ** -->
-				<fieldset id="dtDue">
-					<legend>Due</legend>
-					<div>
-						<label for="dueDate">Date:</label><br />
-						<input name="dueDate" type="datetime-local" id="dueDate">
+		<!-- ** CATEGORIES ** -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<legend>Category:</legend>
+							<label for="category_0">Home</label>
+							<input type="radio" name="category" value="Home" id="category_0">
+							<label for="category_1">Work</label>
+							<input type="radio" name="category" value="Work" id="category_1">
+						</fieldset>
 					</div>
-				</fieldset>
-				<!-- ** PRIORITY ** -->
-				<label for="notes" class="break">Notes:</label>
-				<textarea name="notes" id="notes" class="break">A place to add notes</textarea>
-				<label>Priority:</label><span id="rangeValue">5</span>
-                <input name="range" type="range" min="0" max="10" value="5" id="priority" class="break" onchange="rangeGo(this.value)">
-				<input name="hidden" type="hidden" id="hidden" class="break">
-			</fieldset>
-			<input type="button" id="submit" class="break" value="Add New Task">
-		</form>
-        <a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
-        <div id="data"></div>
-		<div id="nav">
-        	<a href="index.html">Back</a>
-			<a href="#" id="display" name="display">Show Task List</a>
-        </div>
-        <script src="scripts/json.js"></script>
-        <script src="scripts/main.js"></script>
+		<!-- ** PROJECTS ** -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<label for="projects">Project:</label>
+							<select name="projects" id="projects">
+								<option selected>None</option>
+							</select>
+						</fieldset>
+					</div>
+		<!-- ** DATES & TIMES ** -->
+		<!-- ** START ** -->
+					<div data-role="fieldcontain">
+						<legend>Start</legend>
+						<div>
+							<label for="startDate">Date:</label><br />
+							<input name="startDate" type="datetime-local" id="startDate">
+						</div>
+		<!-- ** DUE ** -->
+						<legend>Due</legend>
+						<div>
+							<label for="dueDate">Date:</label><br />
+							<input name="dueDate" type="datetime-local" id="dueDate">
+						</div>
+					</div>
+					
+		<!-- ** PRIORITY ** -->
+					<label for="notes" class="break">Notes:</label>
+					<textarea name="notes" id="notes" class="break">A place to add notes</textarea>
+					<label>Priority:</label>
+					<input name="range" type="range" min="0" max="10" value="5" id="priority">
+					<input name="hidden" type="hidden" id="hidden" class="break">
+					<input type="submit" id="submit" value="Add New Task">
+				</form>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li><a href="index.html" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
+						<!-- <li><a href="additem.html" data-icon="plus">Add Item</a></li> -->
+						<li><a href="#listDetail" data-icon="arrow-u" onclick="lsc()">Show List</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** Page 2 (listDetail) ** -->
+		<div data-role="page" data-theme="a" id="listDetail">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo"></div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<a href="additem.html" id="newQuack" name="newQuack" style="display:none">Add Task</a>
+			<div id="data"></div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="index.html" data-icon="back" data-transition="slide" data-direction="reverse">Home</a></li>
+						<li><a href="#form" data-icon="plus">Add Item</a></li>
+						<li><a href="#listDetail" data-icon="delete" onclick="clearData()">Clear All</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** SCRIPTS ** -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script src="scripts/libs/jquery.validate.min.js"></script>
+		<script src="scripts/json.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/dataQuery.js"></script>
 	</body>
 </html>
