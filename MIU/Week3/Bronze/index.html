@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<!--
+        Title: Fruition (Bronze)
+        Author: Philip Ainsworth
+        Class: Mobile Interfaces and Usability
+        Session: 1206
+        Week: 2
+-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="robots" content="index, follow"/>
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/themes/fruition.min.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="scripts/libs/modernizr.custom.min.js"></script>
+		<title>Fruition</title>
+	</head>
+	<body>
+<!-- ** Page 1 (home) ** -->
+		<div data-role="page" data-theme="a" id="home">
+	<!-- ** HEADER ** -->
+			<div data-role="header" style="border:0px">
+				<div id="logo1">
+					<a href="#due" id="realBig" style="float: left">4</a>
+					<h3 id="text">Tasks Due!</h3>
+					<span id="subheading">Click number for details.</span>
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" style="background-color:#E9ECDE">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><a href="additem.html" data-role="button" data-theme="c" data-icon="plus" data-iconpos="right" data-ajax="false">Add Item</a></div>
+<!-- changed the name to "Import" due to button size -->
+					<div class="ui-block-b"><a href="#home" data-role="button" data-theme="c" data-icon="arrow-d" data-iconpos="right" onclick="autofill()">Import</a></div>
+					<div class="ui-block-a"><a href="https://github.com/ShadowPresence/MDV/tree/master/MIU" data-role="button" data-theme="c" data-icon="arrow-r" data-iconpos="right">Github</a></div>
+					<div class="ui-block-b"><a href="http://shadowpresence.github.com/MDV/MIU/Week2/Gold/index.html" data-role="button" data-theme="c" data-icon="arrow-r" data-iconpos="right">Gold App</a></div>
+					<div class="ui-block-a"><a href="#info" data-role="button" data-theme="c" data-icon="info" data-iconpos="right" data-transition="slideup">Info</a></div>
+					<div class="ui-block-b"><a href="#home" data-role="button" data-theme="c" data-icon="delete" data-iconpos="right" onclick="clearData()">Clear All</a></div>
+				</fieldset>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" class="tagline" data-position="fixed">Finally, an app that helps maximize your time.</div>
+		</div>
+<!-- ** Page 2 (due) ** -->
+		<div data-role="page" data-theme="b" id="due">
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+			<div data-role="content" data-theme="b">
+				<ul data-role="listview" data-divider-theme="c" data-filter="true">
+					<li data-role="list-divider">TASKS DUE TODAY!</li>
+					<li class="due">Pick up kids - 3:15p</li>
+					<li class="due">Project 2 - 11:59p</li>
+					<li class="due">Project 2 Review Video - 11:59p</li>
+					<li class="due">Week 2 Discussion Video - 11:59p</li>
+					<li data-role="list-divider">Tasks due later</li>
+					<li>Drumline Auditions</li>
+					<li>Inventory</li>
+					<li>Pick up kids</li>
+					<li>Mow Lawn</li>
+					<li>Pick up kids</li>
+					<li>Plant Flowers</li>
+					<li>Fix Wall</li>
+					<li>Pick up kids</li>
+					<li>Pick up Kids</li>
+					<li>Dentist</li>
+					<li>Dr. Aung</li>
+					<li>Bacon</li>
+					<li>Eggs</li>
+					<li>Bread</li>
+					<li>Milk</li>
+					<li>Cheese</li>
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<div data-role="navbar" data-iconpos="right" data-theme="b">
+					<ul>
+						<li><a href="#home">Back</a></li>
+						<li><a href="additem.html" data-ajax="false">Add New Item</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** Page 3 (info) ** -->
+		<div data-role="page" data-theme="a" id="info">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div id="copyright" data-role="content" data-theme="b">
+				<h1>Fruition Info</h1>
+				<p class="left">Author: Philip Ainsworth<br />Class: Mobile Interfaces and Usability<br />Session: 1206<br />Week: 2</p>
+				<p>This app is protected under federal copyright laws.</p>
+				<p>Copyright © 2012  Ainsworth Design Technology - All Rights Reserved</p>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="b">
+				<div data-role="navbar" data-iconpos="right" data-theme="b">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse">Back</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <script src="scripts/json.js"></script>
+        <script src="scripts/main.js"></script>
+	</body>
+</html>
