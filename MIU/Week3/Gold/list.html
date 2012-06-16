@@ -25,7 +25,7 @@
 		<script src="scripts/libs/modernizr.custom.min.js"></script>
 		<title>Fruition</title>
 	</head>
-	<body>
+	<body onLoad="project()">
 <!-- ** Page 1 (form) ** -->
 		<div data-role="page" data-theme="d" id="form">
 	<!-- ** HEADER ** -->
@@ -39,11 +39,11 @@
 					<span>Fields marked with a * are required.</span>
 					<div data-role="fieldcontain">
 						<label for="taskName">* Name:</label>
-						<input type="text" name="taskName" id="taskName" class="required" data-mini="true">
+						<input type="text" name="taskName" id="taskName" class="required" placeholder="Enter a new task here" data-mini="true">
 					</div>
 		<!-- ** CATEGORIES ** -->
 					<div data-role="fieldcontain">
-						<fieldset data-role="controlgroup" data-mini="true">
+						<fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
 							<legend>Category:</legend>
 							<label for="category_0">Home</label>
 							<input type="radio" name="category" value="Home" id="category_0">
@@ -65,16 +65,16 @@
 					<div data-role="fieldcontain">
 						<div>
 							<label for="startDate">Start Date:</label>
-							<input name="startDate" value="today" type="datetime-local" id="startDate" data-mini="true">
+							<input name="startDate" type="datetime-local" id="startDate" data-mini="true" placeholder="Date for task to show on calendar">
 						</div>
 		<!-- ** DUE ** -->
 						<div>
 							<label for="dueDate">Due Date:</label>
-							<input name="dueDate" type="datetime-local" id="dueDate" data-mini="true">
+							<input name="dueDate" type="datetime-local" id="dueDate" data-mini="true" placeholder="Completion date for task">
 						</div>
 					</div>
 					<label for="notes" class="break">Notes:</label>
-					<textarea name="notes" id="notes" class="break" data-mini="true">A place to add notes</textarea>
+					<textarea name="notes" id="notes" class="break" data-mini="true" placeholder="A place to add notes"></textarea>
 		<!-- ** PRIORITY ** -->
 					<div data-role="fieldcontain">
 						<label for="priority">Priority:</label>
@@ -87,9 +87,32 @@
 			<div data-role="footer" data-id="nav" data-position="fixed">
 				<div data-role="navbar" data-iconpos="right">
 					<ul>
-						<li><a href="index.html?#home" data-icon="back" data-transition="slide" data-direction="reverse">Back</a></li>
+						<li><a href="index.html?#home" data-icon="back" data-transition="slide" data-direction="reverse" data-ajax="false">Back</a></li>
 						<!-- <li><a href="additem.html" data-icon="plus">Add Item</a></li> -->
-						<li><a href="#" data-icon="arrow-u" data-transition="slide">??</a></li>
+						<!-- <li><a href="#" data-icon="arrow-u" data-transition="slide">??</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** Page 2 (list) ** -->
+		<div data-role="page" data-theme="d" id="list">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<ul id="listLocker" data-role="listview" data-split-icon="delete" data-divider-theme="c">
+				</ul>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse" data-ajax="false">Back</a></li>
+						<li><a href="#home" data-icon="delete" onclick="getData2()">List</a></li>
+						<li><a href="#" data-icon="arrow-d">??</a></li>
 					</ul>
 				</div>
 			</div>

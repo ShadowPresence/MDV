@@ -65,42 +65,6 @@ var storeData = function (key) {
 	alert("Item Saved");
 };
 
-// Form Validation
-/*var validate = function (e) {
-	var getTaskName = gid('taskName');
-	errMsg.innerHTML = "";
-	getTaskName.style.border = "";
-	var errorArray = [];
-	if (getTaskName.value === "") {
-		var tnError = "Please enter a task name.";
-		getTaskName.style.border = "1px solid #CC252A";
-		errorArray.push(tnError);
-	};
-	if (errorArray.length >=1) {
-		for (var i = 0; i < errorArray.length; i++) {
-			var errorList = document.createElement('li');
-			errorList.innerHTML = errorArray[i];
-			errMsg.appendChild(errorList);
-		};
-		e.preventDefault();
-		return false;
-	} else {
-		storeData(this.key);
-	};
-};*/
-
-// Button Magic
-// Creates buttons using given attributes - saves on repeated code
-var buttonMagic = function (key, buttonName, type, id, value, parent) {
-	buttonName = document.createElement('input');
-	buttonName.key = key;
-	buttonName.type = type;
-	buttonName.id = id;
-	buttonName.value = value;
-	parent.appendChild(buttonName);
-	return buttonName;
-};
-
 //Edit Task
 var editItem = function () {
 	var value = localStorage.getItem(this.key);
@@ -127,28 +91,6 @@ var editItem = function () {
 	editSubmit.key = this.key;
 };
 
-//Task Delete
-var deleteItem = function () {
-	var value = localStorage.getItem(this.key);
-	var item = JSON.parse(value);
-	var ask = confirm("Are you sure " + item.taskName[1] + " is complete?");
-	if (ask) {
-		localStorage.removeItem(this.key);
-		window.location.reload();
-	} else {
-		alert("The task: '" + item.taskName[1] + "' has not been removed.");
-	};
-	lsc();
-};
-
-//Make links for edit and delete
-var makeLinks = function (key, divName) {
-	var editBut = buttonMagic(key, "editLink", "button", "edit", "Edit Task", divName);
-	editBut.addEventListener("click", editItem);
-
-	var deleteBut = buttonMagic(key, "deleteLink", "button", "delete", "Complete Task", divName);
-	deleteBut.addEventListener("click", deleteItem);
-};
 
 //Get Data
 var getData = function () {
@@ -180,19 +122,8 @@ var getData = function () {
 			details.innerHTML = detailTag;
 			details2.innerHTML = detailData;
 		};
-		makeLinks(localStorage.key(i), links);
 	};
 	window.location.reload();
-};
-
-// Autofill test data
-var autofill = function () {
-	for (var n in instaBusy) {
-		var id = Math.floor(Math.random()*1000000);
-		localStorage.setItem(id, JSON.stringify(instaBusy[n]));
-	};
-	window.location.reload();
-	alert("Test data has been loaded.");
 };
 
 //Local Storage check
@@ -213,32 +144,6 @@ var lsc = function() {
 	return false;
 };
 
-//Clear Data
-var clearData = function () {
-	if(localStorage.length === 0) {
-		alert("Local Storage is Empty.");
-	} else {
-		// -- Added delete confirmation
-		var sure = confirm("Are you sure you want to delete ALL DATA?");
-		if(sure) {
-			localStorage.clear();
-			alert("All Data Has Been Cleared.");
-			window.location.reload();
-			return false;
-		} else {
-			alert("Data Has NOT Been Cleared."); // -- Alert when user cancels clear
-			return false;
-		};
-	};
-};
 
-project();
-
-//Click events
-// var display = gid('display');
-// display.addEventListener("click", lsc);
-// var clearD = gid('clear');
-// clearD.addEventListener("click", clearData);
-// var saveD = gid('submit');
-// saveD.addEventListener("click", storeData);
+// project();
 
