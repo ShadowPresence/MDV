@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/*
+		Title: Fruition (Gold)
+		Author: Philip Ainsworth
+		Class: Mobile Interfaces and Usability
+		Session: 1206
+		Week: 4
+*/
+
+/* Colors:
+	Bright Red: #CC252A
+	Medium Red: #A11D21
+	Dark Red: #510F10
+	Black Red: #320E10
+	Pale Green: #E9ECDE
+	Light Green: #C7D786
+	Green: #849B3B
+	Dark Green: #445023
+	Orange: #FFB024
+	Light Beige: #BF9F78
+	Beige: #997F60
+	Dark Beige: #736048
+*/
+
+@font-face {
+	font-family: "Papyrus";
+	src: url(Papyrus.ttc);
+}
+
+@font-face {
+	font-family: "Informal";
+	src: url(INFR011N.TTF);
+	font-weight: bold;
+}
+
+#realBig {
+	position: absolute;
+	margin: 30px 0px 0px 50px;
+	color: #A11D21;
+	text-decoration: none;
+	font: 76pt "Informal";
+}
+
+#text {
+	position: absolute;
+	margin: 100px 0px 0px 140px;
+	color: #510f10;
+	font-weight: normal;
+	text-shadow: none;
+	display: inline;
+	font: 18pt "Informal";
+}
+
+#subheading {
+	position: absolute;
+	margin-top: 135px;
+	margin-left: 10px;
+	color: #510f10;
+	font-size: 11pt;
+	font-weight: normal;
+	text-shadow: none;
+}
+
+.due {
+	color: #CC252A;
+}
+
+input.error {
+	-webkit-box-shadow: 0px 0px 12px #A11D21;
+}
+
+label.error {
+	margin: 10px 0px;
+	color: #A11D21;
+}
+
+form>span {
+	color: #A11D21;
+}
+
+form>legend {
+	font-size: 18pt;
+}
+
+#copyright {
+	text-align: center;
+}
+
+p.left {
+	text-align: left;
+}
+
+#logo {
+	background-color: #E9ECDE;
+	background-image: url(../img/fruition.png);
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	height: 97px;
+}
+
+#logo1 {
+	background-color: #E9ECDE;
+	background-image: url(../img/fruition.png);
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	height: 160px;
+}
