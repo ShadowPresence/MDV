@@ -71,12 +71,14 @@ input.error {
 }
 
 label.error {
+	display: block;
 	margin: 10px 0px;
 	color: #A11D21;
 }
 
-form>span {
-	color: #A11D21;
+#span {
+	color: #849B3B;
+	text-align: center;
 }
 
 form>legend {
@@ -91,8 +93,15 @@ p.left {
 	text-align: left;
 }
 
+#home {
+	background-color: #f4f5ea;
+	background-image: url(../img/indexBack.gif);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+
 #logo {
-	background-color: #E9ECDE;
+	background-color: #f4f5ea;
 	background-image: url(../img/fruition.png);
 	background-repeat: no-repeat;
 	background-position: center 6px;
@@ -100,7 +109,7 @@ p.left {
 }
 
 #logo1 {
-	background-color: #E9ECDE;
+	background-color: #f4f5ea;
 	background-image: url(../img/fruition.png);
 	background-repeat: no-repeat;
 	background-position: center 6px;

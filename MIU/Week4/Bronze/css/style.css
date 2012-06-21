@@ -72,6 +72,13 @@
 	color: #A11D21;
 }
 
+#home {
+	background-color: #f4f5ea;
+	background-image: url(../img/indexBack.gif);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+
 #copyright {
 	text-align: center;
 }
@@ -81,7 +88,7 @@ p.left {
 }
 
 #logo {
-	background-color: #E9ECDE;
+	background-color: #f4f5ea;
 	background-image: url(../img/fruition.png);
 	background-repeat: no-repeat;
 	background-position: center 6px;
@@ -90,7 +97,7 @@ p.left {
 
 #logo1 {
 	border: 0px;
-	background-color: #E9ECDE;
+	background-color: #f4f5ea;
 	background-image: url(../img/fruition.png);
 	background-repeat: no-repeat;
 	background-position: center 6px;
