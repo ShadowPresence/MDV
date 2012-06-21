@@ -6,7 +6,40 @@
 		Week: 4
 */
 
+$(document).bind('pageinit', function() {
+	var form = $('#item');
+	form.validate({
+		invalidHandler: function (form, validator){},
+		submitHandler: function (){
+			if (!key) {
+		var id = Math.floor(Math.random()*1000000);
+	} else {
+		var id = key;
+	}
+	var item = {};
+		item.taskName = ["Item:", $("#taskName").val()];
+		item.category = ["Category:", $("input:radio[name=category]:checked").val()];
+		item.projects = ["Project:", $("select.projects").val()];
+		item.notes = ["Notes:", $("#notes").val()];
+		item.startDate = ["Start Date:", $("#startDate").val()];
+		item.dueDate = ["Due Date:", $("#dueDate").val()];
+		item.priority = ["Priority:", $("#priority").val()];
+	localStorage.setItem(id, JSON.stringify(item));
+	alert("Item Saved");
+	window.location.reload();
+		}
+	});
+});
 
+var parseForm = function (data) {
+	console.log(data);
+};
+
+// Element shortcut
+var gid = function (x) {
+	var element = document.getElementById(x);
+	return element;
+};
 
 // Variables
 var cat1Array = [],
@@ -19,128 +52,16 @@ var cat1Array = [],
 	projectGroup = ["Shopping", "Homework", "Scheduled", "Appointment", "Household"],
 	catValue;
 
-// Element shortcut
-var gid = function (x) {
-	var element = document.getElementById(x);
-	return element;
-};
-
-var makeArray = function() {
-	for(var i=0; i<localStorage.length; i++) {
-		var key = localStorage.key(i);
-		var value = localStorage.getItem(key);
-		var obj = JSON.parse(value);
-		for (var n in obj) {
-			if (obj[n][1] === "Home") {
-				cat1Array.push(obj.taskName[1]);
-			} else if (obj[n][1] === "Work") {
-				cat2Array.push(obj.taskName[1]);
-			} else if (obj[n][1] === "Shopping") {
-				pro1Array.push(obj.taskName[1]);
-			} else if (obj[n][1] === "Homework") {
-				pro2Array.push(obj.taskName[1]);
-			} else if (obj[n][1] === "Scheduled") {
-				pro3Array.push(obj.taskName[1]);
-			} else if (obj[n][1] === "Appointment") {
-				pro4Array.push(obj.taskName[1]);
-			} else if (obj[n][1] === "Household") {
-				pro5Array.push(obj.taskName[1]);
-			};
-		};
+// Project selection
+var project = function () {
+	var tag = gid('projects');
+	for (var i=0; i<projectGroup.length; i++) {
+		var makeOption = document.createElement('option');
+		var optText = projectGroup[i];
+		tag.appendChild(makeOption);
+		makeOption.setAttribute("value", optText);
+		makeOption.innerHTML = optText;
 	};
-};
-
-var getJSON = function (find, f, m, name) {
-	for(var i=0; i<localStorage.length; i++) {
-		var key = localStorage.key(i);
-		var value = localStorage.getItem(key);
-		var obj = JSON.parse(value);
-		for (var n in obj) {
-			if (obj[n][1] === find) {
-				var q = name + f + "" + m,
-					b = gid(q),
-					detStart = obj.startDate[1],
-					detDue = obj.dueDate[1],
-					detPri = obj.priority[1],
-					detNote = obj.notes[1],
-					del = document.createElement('input'),
-					edit = document.createElement('input');
-				b.innerHTML = "Start on: " + detStart + "<br />Due: " + detDue + "<br />Priority: " + detPri + "<br />Notes:<br />" + detNote + "<br />";
-				b.appendChild(del);
-				b.appendChild(edit);
-				del.key = key;
-				edit.key = key;
-				del.id = "delete";
-				edit.id = "edit";
-				del.type = "button";
-				edit.type = "button";
-				del.value = "Complete";
-				edit.value = "Edit";
-				del.setAttribute("data-inline", "true");
-				edit.setAttribute("data-inline", "true");
-				$("delete").bind('click', function(){
-					deleteItem(this.id)});
-				edit.addEventListener('click', editItem);
-			};
-		};
-	};
-};
-
-var proWork = function (f, n, name) {
-	var tarList = gid(name + n),
-		setDiv = document.createElement('div'),
-		listing = document.createElement('h3'),
-		para = document.createElement('p');
-		console.log(tarList);
-	if (n==1&&name=="cat") {
-		proAr=cat1Array;
-	} else if (n==2&&name=="cat") {
-		proAr=cat2Array;
-	} else if (n==1&&name=="pro") {
-		proAr=pro1Array;
-	} else if (n==2&&name=="pro") {
-		proAr=pro2Array;
-	} else if (n==3&&name=="pro") {
-		proAr=pro3Array;
-	} else if (n==4&&name=="pro") {
-		proAr=pro4Array;
-	} else if (n==5&&name=="pro") {
-		proAr=pro5Array;
-	};
-	tarList.appendChild(setDiv);
-	setDiv.setAttribute("data-role", "collapsible");
-	setDiv.setAttribute("data-theme", "a");
-	setDiv.appendChild(listing);
-	listing.innerHTML = proAr[f];
-	setDiv.appendChild(para);
-	para.id = name + f + "" + n;
-	getJSON(proAr[f], f, n, name);
-};
-
-var listData = function () {
-	for (var f=0; f<cat1Array.length; f++) {
-		proWork(f, 1, "cat");
-	};
-	for (var f=0; f<cat2Array.length; f++) {
-		proWork(f, 2, "cat");
-	};
-	for (var f=0; f<pro1Array.length; f++) {
-		proWork(f, 1, "pro");
-	};
-	for (var f=0; f<pro2Array.length; f++) {
-		proWork(f, 2, "pro");
-	};
-	for (var f=0; f<pro3Array.length; f++) {
-		proWork(f, 3, "pro");
-	};
-	for (var f=0; f<pro4Array.length; f++) {
-		proWork(f, 4, "pro");
-	};
-	for (var f=0; f<pro5Array.length; f++) {
-		proWork(f, 5, "pro");
-	};
-	$("#catHanger").trigger('create');
-	$("#proHanger").trigger('create');
 };
 
 //Clear Data
@@ -171,85 +92,6 @@ var autofill = function () {
 	window.location.reload();
 	alert("Test data has been loaded.");
 };
-
-//Task Delete
-var deleteItem = function () {
-	var value = localStorage.getItem(this.key);
-	var item = JSON.parse(value);
-	var ask = confirm("Are you sure " + item.taskName[1] + " is complete?");
-	if (ask) {
-		localStorage.removeItem(this.key);
-		window.location.reload();
-	} else {
-		alert("The task: '" + item.taskName[1] + "' has not been removed.");
-	};
-	lsc();
-};
-
-// Project selection
-var project = function () {
-	var tag = gid('projects');
-	for (var i=0; i<projectGroup.length; i++) {
-		var makeOption = document.createElement('option');
-		var optText = projectGroup[i];
-		tag.appendChild(makeOption);
-		makeOption.setAttribute("value", optText);
-		makeOption.innerHTML = optText;
-	};
-};
-
-// Store Data
-
-/*$('#item').submit(function () {
-
-});*/
-
-var storeData = function (key) {
-	if (!key) {
-		var id = Math.floor(Math.random()*1000000);
-	} else {
-		var id = key;
-	}
-	getSelectedRadio();
-	var item = {};
-		item.taskName = ["Item:", gid('taskName').value];
-		item.category = ["Category:", catValue];
-		item.projects = ["Project:", gid('projects').value];
-		item.notes = ["Notes:", gid('notes').value];
-		item.startDate = ["Start Date:", gid('startDate').value];
-		item.dueDate = ["Due Date:", gid('dueDate').value];
-		item.priority = ["Priority:", gid('priority').value];
-	localStorage.setItem(id, JSON.stringify(item));
-	window.location.reload();
-	alert("Item Saved");
-};
-
-//Edit Task
-var editItem = function () {
-	var value = localStorage.getItem(this.key);
-	var item = JSON.parse(value);
-	//toggleControl("off");
-	gid('taskName').value = item.taskName[1];
-	var radios = document.forms[0].category;
-	for (var i = 0; i < radios.length; i++) {
-		if(radios[i].value == "Work" && item.category[1] == "Work") {
-			radios[i].checked = "checked";
-		} else if (radios[i].value == "Home" && item.category[1] == "Home") {
-			radios[i].checked = "checked";
-		};
-	};
-	gid('projects').value = item.projects[1];
-	gid('notes').value = item.notes[1];
-	gid('startDate').value = item.startDate[1];
-	gid('dueDate').value = item.dueDate[1];
-	gid('priority').value = item.priority[1];
-	gid('rangeValue').innerHTML = item.priority[1];
-	gid('submit').value = "Update Task";
-	var editSubmit = gid('submit');
-	editSubmit.addEventListener("click", storeData);
-	editSubmit.key = this.key;
-};
-
 
 //Get Data
 var getData = function () {
@@ -301,6 +143,188 @@ var lsc = function() {
 		};
 	};
 	return false;
+};
+
+//Task Delete
+var deleteItem = function () {
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+	var ask = confirm("Are you sure " + item.taskName[1] + " is complete?");
+	if (ask) {
+		localStorage.removeItem(this.key);
+		window.location.reload();
+	} else {
+		alert("The task: '" + item.taskName[1] + "' has not been removed.");
+	};
+	lsc();
+};
+
+// Store Data
+
+var storeData = function (key) {
+	if (!key) {
+		var id = Math.floor(Math.random()*1000000);
+	} else {
+		var id = key;
+	}
+	var item = {};
+		item.taskName = ["Item:", $("#taskName").val()];
+		item.category = ["Category:", $("input:radio[name=category]:checked").val()];
+		item.projects = ["Project:", $("select.projects").val()];
+		item.notes = ["Notes:", $("#notes").val()];
+		item.startDate = ["Start Date:", $("#startDate").val()];
+		item.dueDate = ["Due Date:", $("#dueDate").val()];
+		item.priority = ["Priority:", $("#priority").val()];
+	localStorage.setItem(id, JSON.stringify(item));
+	alert("Item Saved");
+	window.location.reload();
+};
+
+//Edit Task
+var editItem = function () {
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+	console.log(item);
+	//toggleControl("off");
+	gid('taskName').value = item.taskName[1];
+	var radios = $('input:radio[name=category]:checked').val();
+	/*for (var i = 0; i < radios.length; i++) {
+		if(radios[i].value == "Work" && item.category[1] == "Work") {
+			radios[i].checked = "checked";
+		} else if (radios[i].value == "Home" && item.category[1] == "Home") {
+			radios[i].checked = "checked";
+		};
+	};*/
+	gid('projects').value = item.projects[1];
+	gid('notes').value = item.notes[1];
+	gid('startDate').value = item.startDate[1];
+	gid('dueDate').value = item.dueDate[1];
+	gid('priority').value = item.priority[1];
+	gid('submit').value = "Update Task";
+	var editSubmit = gid('submit');
+	editSubmit.addEventListener("click", storeData);
+	editSubmit.key = this.key;
+};
+
+var makeArray = function() {
+	for(var i=0; i<localStorage.length; i++) {
+		var key = localStorage.key(i);
+		var value = localStorage.getItem(key);
+		var obj = JSON.parse(value);
+		for (var n in obj) {
+			if (obj[n][1] === "Home") {
+				cat1Array.push(obj.taskName[1]);
+			} else if (obj[n][1] === "Work") {
+				cat2Array.push(obj.taskName[1]);
+			} else if (obj[n][1] === "Shopping") {
+				pro1Array.push(obj.taskName[1]);
+			} else if (obj[n][1] === "Homework") {
+				pro2Array.push(obj.taskName[1]);
+			} else if (obj[n][1] === "Scheduled") {
+				pro3Array.push(obj.taskName[1]);
+			} else if (obj[n][1] === "Appointment") {
+				pro4Array.push(obj.taskName[1]);
+			} else if (obj[n][1] === "Household") {
+				pro5Array.push(obj.taskName[1]);
+			};
+		};
+	};
+};
+
+var getJSON = function (find, f, m, name) {
+	for(var i=0; i<localStorage.length; i++) {
+		var key = localStorage.key(i);
+		var value = localStorage.getItem(key);
+		var obj = JSON.parse(value);
+		for (var n in obj) {
+			if (obj[n][1] === find) {
+				var q = name + f + "" + m,
+					b = gid(q),
+					detStart = obj.startDate[1],
+					detDue = obj.dueDate[1],
+					detPri = obj.priority[1],
+					detNote = obj.notes[1],
+					del = document.createElement('input'),
+					edit = document.createElement('input');
+				b.innerHTML = "Start on: " + detStart + "<br />Due: " + detDue + "<br />Priority: " + detPri + "<br />Notes:<br />" + detNote + "<br />";
+				b.appendChild(del);
+				b.appendChild(edit);
+				del.key = key;
+				edit.key = key;
+				del.id = "delItem" + key;
+				edit.id = "edit" + key;
+				del.type = "button";
+				edit.type = "button";
+				del.value = "Complete";
+				edit.value = "Edit";
+				del.setAttribute("data-inline", "true");
+				edit.setAttribute("data-inline", "true");
+				$('#delItem'+key).on('click', deleteItem);
+				$('#edit'+key).on('click', editItem);
+			};
+		};
+	};
+};
+
+var proWork = function (f, n, name) {
+	var proAr,
+		tarList = gid(name + n),
+		setDiv = document.createElement('div'),
+		listing = document.createElement('h3'),
+		para = document.createElement('p');
+	if (n==1&&name=="cat") {
+		proAr=cat1Array;
+	} else if (n==2&&name=="cat") {
+		proAr=cat2Array;
+	} else if (n==1&&name=="pro") {
+		proAr=pro1Array;
+	} else if (n==2&&name=="pro") {
+		proAr=pro2Array;
+	} else if (n==3&&name=="pro") {
+		proAr=pro3Array;
+	} else if (n==4&&name=="pro") {
+		proAr=pro4Array;
+	} else if (n==5&&name=="pro") {
+		proAr=pro5Array;
+	};
+	tarList.appendChild(setDiv);
+	setDiv.setAttribute("data-role", "collapsible");
+	setDiv.setAttribute("data-theme", "a");
+	setDiv.appendChild(listing);
+	listing.innerHTML = proAr[f];
+	setDiv.appendChild(para);
+	para.id = name + f + "" + n;
+	getJSON(proAr[f], f, n, name);
+};
+
+var listData = function () {
+	for (var f=0; f<cat1Array.length; f++) {
+		proWork(f, 1, "cat");
+	};
+	for (var f=0; f<cat2Array.length; f++) {
+		proWork(f, 2, "cat");
+	};
+	for (var f=0; f<pro1Array.length; f++) {
+		proWork(f, 1, "pro");
+	};
+	for (var f=0; f<pro2Array.length; f++) {
+		proWork(f, 2, "pro");
+	};
+	for (var f=0; f<pro3Array.length; f++) {
+		proWork(f, 3, "pro");
+	};
+	for (var f=0; f<pro4Array.length; f++) {
+		proWork(f, 4, "pro");
+	};
+	for (var f=0; f<pro5Array.length; f++) {
+		proWork(f, 5, "pro");
+	};
+	$("#catHanger").trigger('create');
+	$("#proHanger").trigger('create');
+};
+
+var watchDog = function () {
+	$(":checkbox").on('click', deleteItem);
 };
 
 makeArray();

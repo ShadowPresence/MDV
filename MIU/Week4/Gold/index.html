@@ -25,7 +25,8 @@
 		<script src="scripts/libs/modernizr.custom.min.js"></script>
 		<title>Fruition</title>
 	</head>
-	<body onLoad="listData()">
+	<body onLoad="listData(), project()">
+
 <!-- ** Page 1 (home) ** -->
 		<div data-role="page" data-theme="d" id="home">
 	<!-- ** HEADER ** -->
@@ -85,12 +86,13 @@
 				<div data-role="navbar" data-iconpos="right">
 					<ul>
 						<li><a href="#info" data-icon="info" data-transition="slideup" data-ajax="false">Info</a></li>
-						<li><a href="list.html" data-icon="plus" data-transition="slide" data-ajax="false">Add Item</a></li>
+						<li><a href="#form" data-icon="plus" data-transition="slide" data-ajax="false">Add Item</a></li>
 						<li><a href="#due" data-icon="arrow-d" data-transition="slidedown" data-ajax="false">Due</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
+
 <!-- ** Page 2 (due) ** -->
 		<div data-role="page" data-theme="a" id="due">
 	<!-- ** HEADER ** -->
@@ -117,12 +119,13 @@
 				<div data-role="navbar" data-iconpos="right" data-theme="a">
 					<ul>
 						<li><a href="#home" data-icon="back" data-transition="slidedown" data-direction="reverse" data-ajax="false">Back</a></li>
-						<li><a href="list.html" data-icon="plus" data-transition="slide" data-ajax="false">Add Item</a></li>
+						<li><a href="#form" data-icon="plus" data-transition="slide" data-ajax="false">Add Item</a></li>
 						<li><a href="#" data-icon="alert" data-transition="slidedown">Remove</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
+
 <!-- ** Page 3 (info) ** -->
 		<div data-role="page" data-theme="d" id="info">
 	<!-- ** HEADER ** -->
@@ -155,9 +158,101 @@
 				</div>
 			</div>
 		</div>
+
+<!-- ** Page 4 (form) ** -->
+		<div data-role="page" data-theme="d" id="form">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo"></div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<form action=" " method="post" name="item" id="item">
+					<legend style="text-align:center">New Task</legend>
+					<div data-role="fieldcontain">
+						<label for="taskName">* Name:</label>
+						<input type="text" name="taskName" id="taskName" class="required" placeholder="Enter a new task here" data-mini="true">
+					</div>
+		<!-- ** CATEGORIES ** -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+							<legend>* Category:</legend>
+							<label for="category_0">Home</label>
+							<input type="radio" name="category" value="Home" id="category_0" selected>
+							<label for="category_1">Work</label>
+							<input type="radio" name="category" value="Work" id="category_1">
+						</fieldset>
+					</div>
+		<!-- ** PROJECTS ** -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-mini="true">
+							<label for="projects">Project:</label>
+							<select name="projects" id="projects" class="required">
+								<!-- <option>None</option> -->
+							</select>
+						</fieldset>
+					</div>
+		<!-- ** DATES & TIMES ** -->
+		<!-- ** START ** -->
+					<div data-role="fieldcontain">
+						<div>
+							<label for="startDate">Start Date:</label>
+							<input name="startDate" type="datetime-local" id="startDate" data-mini="true" placeholder="Date for task to show on calendar">
+						</div>
+		<!-- ** DUE ** -->
+						<div>
+							<label for="dueDate">Due Date:</label>
+							<input name="dueDate" type="datetime-local" id="dueDate" data-mini="true" placeholder="Completion date for task">
+						</div>
+					</div>
+					<label for="notes" class="break">Notes:</label>
+					<textarea name="notes" id="notes" class="break" data-mini="true" placeholder="A place to add notes"></textarea>
+		<!-- ** PRIORITY ** -->
+					<div data-role="fieldcontain">
+						<label for="priority">Priority:</label>
+						<input name="priority" type="range" min="0" max="10" value="5" id="priority" data-mini="true">
+					</div>
+					<p id="span">Fields marked with a * are required.</p>
+					<input type="submit" id="submit" value="Add New Task" data-theme="c">
+				</form>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slide" data-direction="reverse" data-ajax="false">Back</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<!-- ** Page 5 (list) ** -->
+		<div data-role="page" data-theme="d" id="list">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<ul id="listLocker" data-role="listview" data-split-icon="delete" data-divider-theme="c">
+				</ul>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse" data-ajax="false">Back</a></li>
+						<li><a href="#home" data-icon="delete" onclick="getData2()">List</a></li>
+						<li><a href="#" data-icon="arrow-d">??</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 <!-- ** SCRIPTS ** -->
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script src="scripts/libs/jquery.validate.min.js"></script>
 		<script src="scripts/json.js"></script>
 		<script src="scripts/main.js"></script>
 		<!-- <script src="scripts/dataQuery.js"></script> -->
