@@ -35,8 +35,7 @@
 	<!-- ** CONTENT ** -->
 			<div data-role="content" data-theme="a">
 				<form action="#" method="post" name="item" id="item">
-					<legend>New Task</legend>
-					<span>Fields marked with a * are required.</span>
+					<legend style="text-align:center">New Task</legend>
 					<div data-role="fieldcontain">
 						<label for="taskName">* Name:</label>
 						<input type="text" name="taskName" id="taskName" class="required" placeholder="Enter a new task here" data-mini="true">
@@ -44,9 +43,9 @@
 		<!-- ** CATEGORIES ** -->
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
-							<legend>Category:</legend>
+							<legend>* Category:</legend>
 							<label for="category_0">Home</label>
-							<input type="radio" name="category" value="Home" id="category_0">
+							<input type="radio" name="category" value="Home" id="category_0" selected>
 							<label for="category_1">Work</label>
 							<input type="radio" name="category" value="Work" id="category_1">
 						</fieldset>
@@ -56,7 +55,7 @@
 						<fieldset data-role="controlgroup" data-mini="true">
 							<label for="projects">Project:</label>
 							<select name="projects" id="projects">
-								<option selected>None</option>
+								<option>None</option>
 							</select>
 						</fieldset>
 					</div>
@@ -80,7 +79,8 @@
 						<label for="priority">Priority:</label>
 						<input name="priority" type="range" min="0" max="10" value="5" id="priority" data-mini="true">
 					</div>
-					<input type="submit" id="submit" value="Add New Task" onclick="storeData()" data-theme="c">
+					<p id="span">Fields marked with a * are required.</p>
+					<input type="submit" id="submit" value="Add New Task" data-theme="c">
 				</form>
 			</div>
 	<!-- ** FOOTER ** -->
@@ -116,12 +116,12 @@
 			</div>
 		</div>
 <!-- ** SCRIPTS ** -->
-		<script src="scripts/libs/jquery.validate.min.js"></script>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script src="scripts/libs/jquery.validate.min.js"></script>
+		<script src="scripts/dataQuery.js"></script>
 		<script src="scripts/json.js"></script>
 		<script src="scripts/main.js"></script>
-		<script src="scripts/dataQuery.js"></script>
 	</body>
 </html>
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--
+		Title: Fruition (Gold)
+		Author: Philip Ainsworth
+		Class: Mobile Interfaces and Usability
+		Session: 1206
+		Week: 4
+-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="robots" content="index, follow"/>
+<!-- ** CSS ** -->
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/themes/fruition.min.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="scripts/libs/modernizr.custom.min.js"></script>
+		<title>Fruition</title>
+	</head>
+	<body onLoad="storeData()">
+		<div data-role="page" data-theme="d" id="confirm">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+			<div data-role="content" data-theme="a">
+				<h1>Success!</h1>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="index.html?#home" data-icon="back" data-transition="slideup" data-direction="home" data-ajax="false">Home</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** SCRIPTS ** -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script src="scripts/json.js"></script>
+		<script src="scripts/main.js"></script>
+		<!-- <script src="scripts/dataQuery.js"></script> -->
+	</body>
+</html>
