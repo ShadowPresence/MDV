@@ -6,7 +6,7 @@
 		Week: 4
 */
 
-$(document).bind('pageinit', function() {
+$('#home').on('pageinit', function() {
 	var form = $('#item');
 	form.validate({
 		invalidHandler: function (form, validator){},
@@ -36,10 +36,10 @@ var parseForm = function (data) {
 };
 
 // Element shortcut
-var gid = function (x) {
-	var element = document.getElementById(x);
-	return element;
-};
+// var gid = function (x) {
+// 	var element = document.getElementById(x);
+// 	return element;
+// };
 
 // Variables
 var cat1Array = [],
@@ -54,7 +54,7 @@ var cat1Array = [],
 
 // Project selection
 var project = function () {
-	var tag = gid('projects');
+	var tag = $('#projects');
 	for (var i=0; i<projectGroup.length; i++) {
 		var makeOption = document.createElement('option');
 		var optText = projectGroup[i];
