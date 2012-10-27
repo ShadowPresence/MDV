@@ -6,7 +6,8 @@
 		Week: 4
 */
 
-$('#home').on('pageinit', function() {
+
+$('#form').on('pageinit', function() {
 	var form = $('#item');
 	form.validate({
 		invalidHandler: function (form, validator){},
@@ -35,12 +36,6 @@ var parseForm = function (data) {
 	console.log(data);
 };
 
-// Element shortcut
-// var gid = function (x) {
-// 	var element = document.getElementById(x);
-// 	return element;
-// };
-
 // Variables
 var cat1Array = [],
 	cat2Array = [],
@@ -56,10 +51,10 @@ var cat1Array = [],
 var project = function () {
 	var tag = $('#projects');
 	for (var i=0; i<projectGroup.length; i++) {
-		var makeOption = document.createElement('option');
+		var makeOption = $('<option>');
 		var optText = projectGroup[i];
-		tag.appendChild(makeOption);
-		makeOption.setAttribute("value", optText);
+		tag.append(makeOption);
+		makeOption.attr("value", optText);
 		makeOption.innerHTML = optText;
 	};
 };
@@ -95,28 +90,28 @@ var autofill = function () {
 
 //Get Data
 var getData = function () {
-	var getDiv = gid('data');
-	gid('data').style.display = "block";
+	var getDiv = $('#data');
+	$('data').style.display = "block";
 	for(var i=0; i<localStorage.length; i++) {
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
 		var obj = JSON.parse(value);
-		var icon = document.createElement('div');
-		getDiv.appendChild(icon);
+		var icon = $('<div>');
+		getDiv.append(icon);
 		icon.id = "icon";
-		icon.setAttribute("class", obj.category[1].toLowerCase());
-		var task = document.createElement('div');
-		getDiv.appendChild(task);
+		icon.attr("class", obj.category[1].toLowerCase());
+		var task = $('<div>');
+		getDiv.append(task);
 		task.id = "taskContainer";
-		var links = document.createElement('div');
-		getDiv.appendChild(links);
+		var links = $('<div>');
+		getDiv.append(links);
 		links.id = "links";
 		for (var n in obj) {
-			var details = document.createElement('div');
-			task.appendChild(details);
+			var details = $('<div>');
+			task.append(details);
 			details.id = "dataTag";
-			var details2 = document.createElement('div');
-			task.appendChild(details2);
+			var details2 = $('<div>');
+			task.append(details2);
 			details2.id = "dataData";
 			var detailTag = obj[n][0];
 			var detailData = obj[n][1];
@@ -186,7 +181,7 @@ var editItem = function () {
 	var item = JSON.parse(value);
 	console.log(item);
 	//toggleControl("off");
-	gid('taskName').value = item.taskName[1];
+	$('#taskName').value = item.taskName[1];
 	var radios = $('input:radio[name=category]:checked').val();
 	/*for (var i = 0; i < radios.length; i++) {
 		if(radios[i].value == "Work" && item.category[1] == "Work") {
@@ -195,14 +190,14 @@ var editItem = function () {
 			radios[i].checked = "checked";
 		};
 	};*/
-	gid('projects').value = item.projects[1];
-	gid('notes').value = item.notes[1];
-	gid('startDate').value = item.startDate[1];
-	gid('dueDate').value = item.dueDate[1];
-	gid('priority').value = item.priority[1];
-	gid('submit').value = "Update Task";
-	var editSubmit = gid('submit');
-	editSubmit.addEventListener("click", storeData);
+	$('#projects').value = item.projects[1];
+	$('#notes').value = item.notes[1];
+	$('#startDate').value = item.startDate[1];
+	$('#dueDate').value = item.dueDate[1];
+	$('#priority').value = item.priority[1];
+	$('#submit').value = "Update Task";
+	var editSubmit = $('#submit');
+	editSubmit.on("click", storeData);
 	editSubmit.key = this.key;
 };
 
@@ -239,16 +234,16 @@ var getJSON = function (find, f, m, name) {
 		for (var n in obj) {
 			if (obj[n][1] === find) {
 				var q = name + f + "" + m,
-					b = gid(q),
+					b = $(q),
 					detStart = obj.startDate[1],
 					detDue = obj.dueDate[1],
 					detPri = obj.priority[1],
 					detNote = obj.notes[1],
-					del = document.createElement('input'),
-					edit = document.createElement('input');
+					del = $('<input>'),
+					edit = $('<input>');
 				b.innerHTML = "Start on: " + detStart + "<br />Due: " + detDue + "<br />Priority: " + detPri + "<br />Notes:<br />" + detNote + "<br />";
-				b.appendChild(del);
-				b.appendChild(edit);
+				b.append(del);
+				b.append(edit);
 				del.key = key;
 				edit.key = key;
 				del.id = "delItem" + key;
@@ -257,8 +252,8 @@ var getJSON = function (find, f, m, name) {
 				edit.type = "button";
 				del.value = "Complete";
 				edit.value = "Edit";
-				del.setAttribute("data-inline", "true");
-				edit.setAttribute("data-inline", "true");
+				del.attr("data-inline", "true");
+				edit.attr("data-inline", "true");
 				$('#delItem'+key).on('click', deleteItem);
 				$('#edit'+key).on('click', editItem);
 			};
@@ -268,10 +263,10 @@ var getJSON = function (find, f, m, name) {
 
 var proWork = function (f, n, name) {
 	var proAr,
-		tarList = gid(name + n),
-		setDiv = document.createElement('div'),
-		listing = document.createElement('h3'),
-		para = document.createElement('p');
+		tarList = $(name + n),
+		setDiv = $('<div>'),
+		listing = $('<h3>'),
+		para = $('p');
 	if (n==1&&name=="cat") {
 		proAr=cat1Array;
 	} else if (n==2&&name=="cat") {
@@ -286,13 +281,13 @@ var proWork = function (f, n, name) {
 		proAr=pro4Array;
 	} else if (n==5&&name=="pro") {
 		proAr=pro5Array;
-	};
-	tarList.appendChild(setDiv);
-	setDiv.setAttribute("data-role", "collapsible");
-	setDiv.setAttribute("data-theme", "a");
-	setDiv.appendChild(listing);
-	listing.innerHTML = proAr[f];
-	setDiv.appendChild(para);
+	}; 
+	tarList.append(setDiv);
+	setDiv.attr("data-role", "collapsible");
+	setDiv.attr("data-theme", "a");
+	setDiv.append(listing);
+	listing.html = proAr[f];
+	setDiv.append(para);
 	para.id = name + f + "" + n;
 	getJSON(proAr[f], f, n, name);
 };
