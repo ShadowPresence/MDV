@@ -11,24 +11,7 @@ $('#form').on('pageinit', function() {
 	var form = $('#item');
 	form.validate({
 		invalidHandler: function (form, validator){},
-		submitHandler: function (){
-			if (!key) {
-		var id = Math.floor(Math.random()*1000000);
-	} else {
-		var id = key;
-	}
-	var item = {};
-		item.taskName = ["Item:", $("#taskName").val()];
-		item.category = ["Category:", $("input:radio[name=category]:checked").val()];
-		item.projects = ["Project:", $("select.projects").val()];
-		item.notes = ["Notes:", $("#notes").val()];
-		item.startDate = ["Start Date:", $("#startDate").val()];
-		item.dueDate = ["Due Date:", $("#dueDate").val()];
-		item.priority = ["Priority:", $("#priority").val()];
-	localStorage.setItem(id, JSON.stringify(item));
-	alert("Item Saved");
-	window.location.reload();
-		}
+		submitHandler: storeData(),		
 	});
 });
 
@@ -55,7 +38,7 @@ var project = function () {
 		var optText = projectGroup[i];
 		tag.append(makeOption);
 		makeOption.attr("value", optText);
-		makeOption.innerHTML = optText;
+		makeOption.html = optText;
 	};
 };
 
@@ -91,7 +74,7 @@ var autofill = function () {
 //Get Data
 var getData = function () {
 	var getDiv = $('#data');
-	$('data').style.display = "block";
+	$('#data').style.display = "block";
 	for(var i=0; i<localStorage.length; i++) {
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
@@ -115,8 +98,8 @@ var getData = function () {
 			details2.id = "dataData";
 			var detailTag = obj[n][0];
 			var detailData = obj[n][1];
-			details.innerHTML = detailTag;
-			details2.innerHTML = detailData;
+			details.html = detailTag;
+			details2.html = detailData;
 		};
 	};
 	window.location.reload();
