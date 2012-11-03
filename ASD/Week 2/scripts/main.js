@@ -224,7 +224,7 @@ var getJSON = function (find, f, m, name) {
 					detNote = obj.notes[1],
 					del = $('<input>'),
 					edit = $('<input>');
-				b.html = "Start on: " + detStart + "<br />Due: " + detDue + "<br />Priority: " + detPri + "<br />Notes:<br />" + detNote + "<br />";
+				b.innerHTML = "Start on: " + detStart + "<br />Due: " + detDue + "<br />Priority: " + detPri + "<br />Notes:<br />" + detNote + "<br />";
 				b.append(del);
 				b.append(edit);
 				del.key = key;

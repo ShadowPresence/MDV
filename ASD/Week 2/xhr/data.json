@@ -1,4 +1,6 @@
-	"item1": {
+{
+	"Items": [
+	{
 		"item":"Bacon",
 		"category":"Home",
 		"projects":"Shopping",
@@ -7,8 +9,8 @@
 		"dueDate":"",
 		"priority":"0"
 	},
-	"item2": {
-		"taskName":"Eggs",
+	{
+		"item":"Eggs",
 		"category":"Home",
 		"projects":"Shopping",
 		"notes":"",
@@ -16,8 +18,8 @@
 		"dueDate":"",
 		"priority":"0"
 	},
-	"item3": {
-		"taskName":"Bread",
+	{
+		"item":"Bread",
 		"category":"Home",
 		"projects":"Shopping",
 		"notes":"",
@@ -25,8 +27,8 @@
 		"dueDate":"",
 		"priority":"0"
 	},
-	"item4": {
-		"taskName":"Milk",
+	{
+		"item":"Milk",
 		"category":"Home",
 		"projects":"Shopping",
 		"notes":"",
@@ -34,8 +36,8 @@
 		"dueDate":"",
 		"priority":"0"
 	},
-	"item5": {
-		"taskName":"Cheese",
+	{
+		"item":"Cheese",
 		"category":"Home",
 		"projects":"Shopping",
 		"notes":"",
@@ -43,8 +45,8 @@
 		"dueDate":"",
 		"priority":"0"
 	},
-	"item6": {
-		"taskName":"Project 2",
+	{
+		"item":"Project 2",
 		"category":"Home",
 		"projects":"Homework",
 		"notes":"Split week 1 app into 2 apps, Gold & Bronze. Gold is ideal app bronze offers alternatives.",
@@ -52,8 +54,8 @@
 		"dueDate":"2012-06-07T23:59",
 		"priority":"10"
 	},
-	"item7": {
-		"taskName":"Project 2 Video Review",
+	{
+		"item":"Project 2 Video Review",
 		"category":"Home",
 		"projects":"Homework",
 		"notes":"Review apps with decision justification",
@@ -61,8 +63,8 @@
 		"dueDate":"2012-06-07T23:59",
 		"priority":"9"
 	},
-	"item8": {
-		"taskName":"Week 2 Discussion Video",
+	{
+		"item":"Week 2 Discussion Video",
 		"category":"Home",
 		"projects":"Homework",
 		"notes":"Discussion for week 2",
@@ -70,8 +72,8 @@
 		"dueDate":"2012-06-07T23:59",
 		"priority":"8"
 	},
-	"item9": {
-		"taskName":"Pick up kids",
+	{
+		"item":"Pick up kids",
 		"category":"Home",
 		"projects":"Scheduled",
 		"notes":"",
@@ -79,8 +81,8 @@
 		"dueDate":"2012-06-04T15:15",
 		"priority":"0"
 	},
-	"item10": {
-		"taskName":"Pick up kids",
+	{
+		"item":"Pick up kids",
 		"category":"Home",
 		"projects":"Scheduled",
 		"notes":"",
@@ -88,8 +90,8 @@
 		"dueDate":"2012-06-05T15:15",
 		"priority":"0"
 	},
-	"item11": {
-		"taskName":"Pick up kids",
+	{
+		"item":"Pick up kids",
 		"category":"Home",
 		"projects":"Scheduled",
 		"notes":"",
@@ -97,8 +99,8 @@
 		"dueDate":"2012-06-06T15:15",
 		"priority":"0"
 	},
-	"item12": {
-		"taskName":"Pick up kids",
+	{
+		"item":"Pick up kids",
 		"category":"Home",
 		"projects":"Scheduled",
 		"notes":"",
@@ -106,8 +108,8 @@
 		"dueDate":"2012-06-07T15:15",
 		"priority":"0"
 	},
-	"item13": {
-		"taskName":"Pick up kids",
+	{
+		"item":"Pick up kids",
 		"category":"Home",
 		"projects":"Scheduled",
 		"notes":"",
@@ -115,8 +117,8 @@
 		"dueDate":"2012-06-08T15:15",
 		"priority":"0"
 	},
-	"item14": {
-		"taskName":"Drumline Auditions",
+	{
+		"item":"Drumline Auditions",
 		"category":"Work",
 		"projects":"Scheduled",
 		"notes":"Seniors get priority.",
@@ -124,8 +126,8 @@
 		"dueDate":"2012-06-01T14:00",
 		"priority":"0"
 	},
-	"item15": {
-		"taskName":"Inventory",
+	{
+		"item":"Inventory",
 		"category":"Work",
 		"projects":"Scheduled",
 		"notes":"Take inventory of drumline instruments.",
@@ -133,8 +135,8 @@
 		"dueDate":"2012-06-08T14:00",
 		"priority":"0"
 	},
-	"item16": {
-		"taskName":"Dentist",
+	{
+		"item":"Dentist",
 		"category":"Home",
 		"projects":"Appointment",
 		"notes":"",
@@ -142,8 +144,8 @@
 		"dueDate":"2012-06-22T11:30",
 		"priority":"9"
 	},
-	"item17": {
-		"taskName":"Dr. Aung",
+	{
+		"item":"Dr. Aung",
 		"category":"Home",
 		"projects":"Appointment",
 		"notes":"Standard check up",
@@ -151,8 +153,8 @@
 		"dueDate":"2012-06-22T12:30",
 		"priority":"9"
 	},
-	"item18": {
-		"taskName":"Mow Lawn",
+	{
+		"item":"Mow Lawn",
 		"category":"Home",
 		"projects":"Household",
 		"notes":"",
@@ -160,8 +162,8 @@
 		"dueDate":"2012-06-11T17:30",
 		"priority":"5"
 	},
-	"item19": {
-		"taskName":"Plant Flowers",
+	{
+		"item":"Plant Flowers",
 		"category":"Home",
 		"projects":"Household",
 		"notes":"5 bulbs need to be planted in various places",
@@ -169,13 +171,13 @@
 		"dueDate":"2012-06-11T17:30",
 		"priority":"7"
 	},
-	"item20": {
-		"taskName":"Repair Wall",
+	{
+		"item":"Repair Wall",
 		"category":"Home",
 		"projects":"Household",
 		"notes":"Bathroom needs joint compound and paint",
 		"startDate":"2012-06-09T08:00",
 		"dueDate":"2012-06-11T17:30",
 		"priority":"3"
-	}
+	}]
 }
