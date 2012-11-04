@@ -1,7 +1,5 @@
 //
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 var it;
 
 var render = function (it){
@@ -19,34 +17,6 @@ var render = function (it){
 			setDiv.append(setP);
 		};
 	};
-=======
->>>>>>> origin/master
-var it
-
-var render = function (style, it){
-	if (style=="heading") {
-		var setDiv = $('<li>');
-		setDiv.id = Math.floor(Math.random()*1000000);
-		setDiv.html(it.item.toUpperCase());
-		setDiv.appendTo('#hanger');
-	} else {
-		for (var n in it) {
-			if (n !== "item") {
-				var setDiv2 = $('<div>');
-				setDiv2.attr("data-role", "collapsible-set");
-				setDiv2.attr("data-theme", "a");
-				setDiv2.html(n.toUpperCase() + ": " + it[n]);
-				setDiv2.appendTo('setDiv');
-			};
-		};
-	};
-	
-	$('#hanger').listview('refresh');
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
->>>>>>> origin/master
-};
 
 $(function(){
 	$('#hanger').empty();
@@ -57,26 +27,12 @@ $(function(){
 		success: function(instaBusy){
 			for (var i = 0; i < instaBusy.Items.length; i++) {
 				it = instaBusy.Items[i];
-<<<<<<< HEAD
-				render("heading", it);
-				render("desc", it);
-=======
-<<<<<<< HEAD
 				render(it);
 				// $('#hanger').listview('refresh');
-=======
-				render("heading", it);
-				render("desc", it);
->>>>>>> origin/master
->>>>>>> origin/master
 			};
 		}
 	});
 });
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
 // //
 // var it,
@@ -119,7 +75,3 @@ $(function(){
 // 	});
 // });
 
-=======
->>>>>>> origin/master
->>>>>>> origin/master
- 
