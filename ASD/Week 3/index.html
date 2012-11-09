@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<!--
+		Title: Fruition (Gold)
+		Author: Philip Ainsworth
+		Class: Mobile Interfaces and Usability
+		Session: 1206
+		Week: 4
+-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="description" content="Fruition web App. Productivity software to help track your life."/>
+		<meta name="keywords" content="fruition, productive, producktive, productivity, organization, organize, todo, list, track"/>
+		<meta name="robots" content="index, follow"/>
+<!-- ** CSS ** -->
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/themes/fruition.min.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<script src="scripts/libs/modernizr.custom.min.js"></script>
+		<title>Fruition</title>
+	</head>
+	<body onLoad="listData(), project()">
+
+<!-- ** Page 1 (home) ** -->
+		<div data-role="page" data-theme="d" id="home">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo1">
+					<a href="#due" id="realBig" style="float: left" data-transition="slidedown">4</a>
+					<h3 id="text">Tasks Due!</h3>
+					<span id="subheading">Finally, an app that helps maximize your time!</span>
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content">
+				<ul data-role="listview" data-filter="true"></ul>
+				<div id="homeHanger" data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Category</h3>
+						<div id="catHanger" data-role="collapsible-set" data-theme="a">
+							<div data-role="collapsible">
+								<h3>Home</h3>
+								<div id="cat1" data-role="collapsible-set" data-theme="a"></div>
+							</div>
+							<div data-role="collapsible">
+								<h3>Work</h3>
+								<div id="cat2" data-role="collapsible-set" data-theme="a"></div>
+							</div>
+						</div>
+					</div>
+					<div data-role="collapsible" data-collapsed="true">
+						<h3>Projects</h3>
+						<div id="proHanger" data-role="collapsible-set" data-theme="a">
+							<div data-role="collapsible">
+								<h3 id="p1h">Shopping</h3>
+								<div id="pro1" data-role="collapsible-set" data-theme="a"></div>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p2h">Homework</h3>
+								<div id="pro2" data-role="collapsible-set" data-theme="a"></div>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p3h">Scheduled</h3>
+								<div id="pro3" data-role="collapsible-set" data-theme="a"></div>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p4h">Appointment</h3>
+								<div id="pro4" data-role="collapsible-set" data-theme="a"></div>
+							</div>
+							<div data-role="collapsible">
+								<h3 id="p5h">Household</h3>
+								<div id="pro5" data-role="collapsible-set" data-theme="a"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li><a href="#info" data-icon="info" data-transition="slideup" data-ajax="false">Info</a></li>
+						<li><a href="#form" data-icon="plus" data-transition="slide" data-ajax="false">Add Item</a></li>
+						<li><a href="#due" data-icon="arrow-d" data-transition="slidedown" data-ajax="false">Due</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<!-- ** Page 2 (due) ** -->
+		<div data-role="page" data-theme="a" id="due">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content">
+				<form action="#" method="post" name="item" id="item">
+					<fieldset data-role="controlgroup">
+						<ul data-role="listview" data-divider-theme="b" data-filter="true" id="dueHanger" data-mini="true">
+							<li data-role="list-divider">TASKS DUE TODAY!</li>
+							<label class="due" class="checkbox-1"><input type="checkbox" class="checkbox-1">Pick up kids - 3:15p</label>
+							<label class="due" class="checkbox-2"><input type="checkbox" class="checkbox-2">Project 2 - 11:59p</label>
+							<label class="due" class="checkbox-3"><input type="checkbox" class="checkbox-3">Project 2 Review Video - 11:59p</label>
+							<label class="due" class="checkbox-4"><input type="checkbox" class="checkbox-4">Week 2 Discussion Video - 11:59p</label>
+						</ul>
+					</fieldset>
+				</form>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slidedown" data-direction="reverse" data-ajax="false">Back</a></li>
+						<li><a href="#form" data-icon="plus" data-transition="slide" data-ajax="false">Add Item</a></li>
+						<li><a href="#" data-icon="alert" data-transition="slidedown">Remove</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<!-- ** Page 3 (info) ** -->
+		<div data-role="page" data-theme="d" id="info">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a" id="copyright">
+				<h1>Fruition Info</h1>
+				<p class="left">Author: Philip Ainsworth<br />Class: Mobile Interfaces and Usability<br />Session: 1206<br />Week: 4</p>
+				<p>This app is protected under federal copyright laws.</p>
+				<p>Copyright © 2012  Ainsworth Design Technology - All Rights Reserved</p>
+				<ul data-role="listview" data-divider-theme="c">
+					<li data-role="list-divider">Github links</li>
+					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week4/Gold/index.html">Gold Live Page</a></li>
+					<li><a href="https://github.com/ShadowPresence/MDV/tree/master/MIU">Github account</a></li>
+					<li data-role="list-divider">Other Apps</li>
+					<li><a href="http://shadowpresence.github.com/MDV/MIU/Week4/Bronze/index.html">Bronze App</a></li>
+				</ul>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse" data-ajax="false">Back</a></li>
+						<li><a href="#info" data-icon="delete" onclick="clearData()">Clear All</a></li>
+						<li><a href="#info" data-icon="arrow-d" onclick="autofill()">Load Data</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<!-- ** Page 4 (form) ** -->
+		<div data-role="page" data-theme="d" id="form">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo"></div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<form action=" " method="post" name="item" id="item">
+					<legend style="text-align:center">New Task</legend>
+					<div data-role="fieldcontain">
+						<label for="taskName">* Name:</label>
+						<input type="text" name="taskName" id="taskName" class="required" placeholder="Enter a new task here" data-mini="true">
+					</div>
+		<!-- ** CATEGORIES ** -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+							<legend>* Category:</legend>
+							<label for="category_0">Home</label>
+							<input type="radio" name="category" value="Home" id="category_0" selected>
+							<label for="category_1">Work</label>
+							<input type="radio" name="category" value="Work" id="category_1">
+						</fieldset>
+					</div>
+		<!-- ** PROJECTS ** -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-mini="true">
+							<label for="projects">Project:</label>
+							<select name="projects" id="projects" class="required">
+								<!-- <option>None</option> -->
+							</select>
+						</fieldset>
+					</div>
+		<!-- ** DATES & TIMES ** -->
+		<!-- ** START ** -->
+					<div data-role="fieldcontain">
+						<div>
+							<label for="startDate">Start Date:</label>
+							<input name="startDate" type="datetime-local" id="startDate" data-mini="true" placeholder="Date for task to show on calendar">
+						</div>
+		<!-- ** DUE ** -->
+						<div>
+							<label for="dueDate">Due Date:</label>
+							<input name="dueDate" type="datetime-local" id="dueDate" data-mini="true" placeholder="Completion date for task">
+						</div>
+					</div>
+					<label for="notes" class="break">Notes:</label>
+					<textarea name="notes" id="notes" class="break" data-mini="true" placeholder="A place to add notes"></textarea>
+		<!-- ** PRIORITY ** -->
+					<div data-role="fieldcontain">
+						<label for="priority">Priority:</label>
+						<input name="priority" type="range" min="0" max="10" value="5" id="priority" data-mini="true">
+					</div>
+					<p id="span">Fields marked with a * are required.</p>
+					<input type="submit" id="submit" value="Add New Task" data-theme="c">
+				</form>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slide" data-direction="reverse" data-ajax="false">Back</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<!-- ** Page 5 (list) ** -->
+		<div data-role="page" data-theme="d" id="list">
+	<!-- ** HEADER ** -->
+			<div data-role="header">
+				<div id="logo">
+				</div>
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<ul id="listLocker" data-role="listview" data-split-icon="delete" data-divider-theme="c">
+				</ul>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="a">
+				<div data-role="navbar" data-iconpos="right" data-theme="a">
+					<ul>
+						<li><a href="#home" data-icon="back" data-transition="slideup" data-direction="reverse" data-ajax="false">Back</a></li>
+						<li><a href="#home" data-icon="delete" onclick="getData2()">List</a></li>
+						<li><a href="#" data-icon="arrow-d">??</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- ** SCRIPTS ** -->
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script src="scripts/libs/jquery.validate.min.js"></script>
+		<script src="scripts/json.js"></script>
+		<script src="scripts/main.js"></script>
+		<!-- <script src="scripts/dataQuery.js"></script> -->
+	</body>
+</html>
