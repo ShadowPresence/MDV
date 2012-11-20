@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/*
+		Title: F.A.S.T.
+		Author: Philip Ainsworth
+		Class: ASD
+		Session: 1212
+		Week: 1
+*/
+
+/* Colors:
+	
+*/
+
+@font-face {
+	font-family: "Papyrus";
+	src: url(Papyrus.ttc);
+}
+
+@font-face {
+	font-family: "Informal";
+	src: url(INFR011N.TTF);
+	font-weight: bold;
+}
+
+#home {
+	background-color: #f8f8fa;
+	background-image: url(../img/splash.png);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+
+
