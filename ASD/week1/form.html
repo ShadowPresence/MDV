@@ -27,19 +27,44 @@
 	</head>
 	<body>
 <!-- ** Page 1 (home) ** -->
-		<div data-role="page" data-theme="d" id="home">
+		<div data-role="page" data-theme="d" id="form">
 	<!-- ** HEADER ** -->
-			<div data-role="header">
+			<div data-role="header" class="head" style="background-color: #222222">
 				
 			</div>
 	<!-- ** CONTENT ** -->
-			<div data-role="content">
-				
+			<div data-role="content" data-theme="a">
+				<form>
+					<label for="company" class="ui-hidden-accessible">Company:</label>
+				    <input type="text" name="company" id="company" value="" data-mini="true" placeholder="Company" />
+				    <label for="account" class="ui-hidden-accessible">Account:</label>
+				    <input type="text" name="account" id="account" value="" data-mini="true" placeholder="Account #" />
+				    <label for="date">Date:</label>
+				    <input type="date" name="date" id="date" value="" data-mini="true" />
+					<fieldset class="ui-grid-a">
+						<label for="smoke">Initiating Devices:</label>
+					    <div class="ui-block-a"><input type="button" name="smoke" id="smoke" data-theme="d" data-mini="true" value="Smokes" /></div>
+					    <div class="ui-block-b"><input type="button" name="pull" id="pull" data-theme="d" data-mini="true" value="Pulls" /></div>
+					    <div class="ui-block-a"><input type="button" name="heatFT" id="heatFT" data-theme="d" data-mini="true" value="FT Heats" /></div>
+					    <div class="ui-block-b"><input type="button" name="heatROR" id="heatROR" data-theme="d" data-mini="true" value="ROR Heats" /></div>
+						<label for="horn">Notification:</label>
+					    <div class="ui-block-a"><input type="button" name="horn" id="horn" data-theme="d" data-mini="true" value="Horn" /></div>
+					    <div class="ui-block-b"><input type="button" name="strobe" id="strobe" data-theme="d" data-mini="true" value="Strobe" /></div>
+					    <div class="ui-block-a"><input type="button" name="hornStrobe" id="hornStrobe" data-theme="d" data-mini="true" value="Horn/Strobe" /></div>
+					    <div class="ui-block-b"><input type="button" name="mini" id="mini" data-theme="d" data-mini="true" value="Mini-Sounder" /></div>
+						<label for="sprkSup">Sprinkler:</label>
+					    <div class="ui-block-a"><input type="button" name="sprkSup" id="sprkSup" data-theme="d" data-mini="true" value="Supervisory" /></div>
+					    <div class="ui-block-b"><input type="button" name="sprkFlow" id="sprkFlow" data-theme="d" data-mini="true" value="Flow" /></div>
+					</fieldset>
+					<input type="submit" value="submit" data-theme="b" />
+				</form>
 			</div>
 	<!-- ** FOOTER ** -->
-			<div data-role="footer" data-id="nav" data-position="fixed">
-				<a href="form.html" data-role="button" data-mini="true">New</a>
-				<a href="list.html" data-role="button" data-mini="true">List</a>
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="c">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><a href="index.html" data-role="button" data-theme="b" data-mini="true">Home</a></div>
+					<div class="ui-block-b"><a href="list.html" data-role="button" data-theme="b" data-mini="true">List</a></div>
+				</fieldset>
 			</div>
 		</div>
 <!-- ** SCRIPTS ** -->

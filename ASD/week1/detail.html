@@ -27,7 +27,7 @@
 	</head>
 	<body>
 <!-- ** Page 1 (home) ** -->
-		<div data-role="page" data-theme="d" id="detail">
+		<div data-role="page" data-theme="c" id="detail">
 	<!-- ** HEADER ** -->
 			<div data-role="header" class="head">
 				
@@ -35,15 +35,29 @@
 	<!-- ** CONTENT ** -->
 			<div data-role="content">
 				<ul data-role="listview">
-					<li><a href="detail.html">Company 1</a></li>
-					<li><a href="#">Company 2</a></li>
-					<li><a href="#">Company 3</a></li>
+					<li>
+						<p class="ui-li-aside"><strong>Date: </strong>11/24/12</p>
+						<h1>Company 1</h1>
+						<p><strong>Account #: </strong>7051234</p>
+						<hr>
+					</li>
+					<li data-theme="a">Smokes:<div class="ui-li-count">12</div></li>
+					<li data-theme="a">Pulls:<div class="ui-li-count">4</div></li>
+					<li data-theme="a">FT Heats:<div class="ui-li-count">27</div></li>
+					<li data-theme="a">ROR Heats:<div class="ui-li-count">5</div></li>
+					<li data-theme="a">Horn/Strobes:<div class="ui-li-count">10</div></li>
+					<li data-theme="a">Strobes:<div class="ui-li-count">8</div></li>
 				</ul>
 			</div>
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><button id="edit" data-theme="b" data-mini="true">Edit</button></div>
+				<div class="ui-block-b"><button id="delete" data-theme="b" data-mini="true">Delete</button></div>
+			</fieldset>
 	<!-- ** FOOTER ** -->
 			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="b">
-				<fieldset class="ui-grid-solo">
-					<div class="ui-block-a"><a href="index.html" data-role="button" data-mini="true">Home</a></div>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><a href="list.html" data-role="button" data-theme="b" data-mini="true">Back</a></div>
+					<div class="ui-block-b"><a href="index.html" data-role="button" data-theme="b" data-mini="true">Home</a></div>
 				</fieldset>
 			</div>
 		</div>

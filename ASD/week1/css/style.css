@@ -30,4 +30,17 @@
 	background-position: center 0px;
 }
 
+#homeContent {
+	position: relative;
+	top: 320px;
+}
+
+.head {
+	background-color: #f8f8fa;
+	height: 56px;
+	background-image: url(../img/header.png);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+
 
