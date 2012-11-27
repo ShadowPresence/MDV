@@ -38,6 +38,108 @@
 				<a href="list.html" data-role="button" data-mini="true" data-theme="e">List</a>
 			</div>
 		</div>
+<!-- ** Page 2 (Form) ** -->
+		<div data-role="page" data-theme="d" id="form">
+	<!-- ** HEADER ** -->
+			<div data-role="header" class="head" style="background-color: #222222">
+				
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content" data-theme="a">
+				<form>
+					<label for="company" class="ui-hidden-accessible">Company:</label>
+				    <input type="text" name="company" id="company" value="" data-mini="true" placeholder="Company" />
+				    <label for="account" class="ui-hidden-accessible">Account:</label>
+				    <input type="text" name="account" id="account" value="" data-mini="true" placeholder="Account #" />
+				    <label for="date">Date:</label>
+				    <input type="date" name="date" id="date" value="" data-mini="true" />
+					<fieldset class="ui-grid-a">
+						<label for="smoke">Initiating Devices:</label>
+					    <div class="ui-block-a"><input type="button" name="smoke" id="smoke" data-theme="d" data-mini="true" value="Smokes" /></div>
+					    <div class="ui-block-b"><input type="button" name="pull" id="pull" data-theme="d" data-mini="true" value="Pulls" /></div>
+					    <div class="ui-block-a"><input type="button" name="heatFT" id="heatFT" data-theme="d" data-mini="true" value="FT Heats" /></div>
+					    <div class="ui-block-b"><input type="button" name="heatROR" id="heatROR" data-theme="d" data-mini="true" value="ROR Heats" /></div>
+						<label for="horn">Notification:</label>
+					    <div class="ui-block-a"><input type="button" name="horn" id="horn" data-theme="d" data-mini="true" value="Horn" /></div>
+					    <div class="ui-block-b"><input type="button" name="strobe" id="strobe" data-theme="d" data-mini="true" value="Strobe" /></div>
+					    <div class="ui-block-a"><input type="button" name="hornStrobe" id="hornStrobe" data-theme="d" data-mini="true" value="Horn/Strobe" /></div>
+					    <div class="ui-block-b"><input type="button" name="mini" id="mini" data-theme="d" data-mini="true" value="Mini-Sounder" /></div>
+						<label for="sprkSup">Sprinkler:</label>
+					    <div class="ui-block-a"><input type="button" name="sprkSup" id="sprkSup" data-theme="d" data-mini="true" value="Supervisory" /></div>
+					    <div class="ui-block-b"><input type="button" name="sprkFlow" id="sprkFlow" data-theme="d" data-mini="true" value="Flow" /></div>
+					</fieldset>
+					<input type="submit" value="submit" data-theme="b" />
+				</form>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="c">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><a href="#home" data-role="button" data-theme="b" data-mini="true">Home</a></div>
+					<div class="ui-block-b"><a href="#list" data-role="button" data-theme="b" data-mini="true">List</a></div>
+				</fieldset>
+			</div>
+		</div>
+<!-- ** Page 3 (List) ** -->
+		<div data-role="page" data-theme="d" id="list">
+	<!-- ** HEADER ** -->
+			<div data-role="header" class="head">
+				
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content">
+				<ul id="hanger" data-role="listview">
+					<li>
+						<a href="detail.html">
+							<p><strong>Rivergreen -</strong> 7051234</p>
+							<p><strong>Date: </strong>11/24/12</p>
+						</a>
+					</li>
+					<li><a href="#">Company 2</a></li>
+					<li><a href="#">Company 3</a></li>
+				</ul>
+			</div>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="b">
+				<fieldset class="ui-grid-solo">
+					<div class="ui-block-a"><a href="#home" data-role="button" data-mini="true">Home</a></div>
+				</fieldset>
+			</div>
+		</div>
+<!-- ** Page 4 (Detail) ** -->
+		<div data-role="page" data-theme="c" id="detail">
+	<!-- ** HEADER ** -->
+			<div data-role="header" class="head">
+				
+			</div>
+	<!-- ** CONTENT ** -->
+			<div data-role="content">
+				<ul data-role="listview">
+					<li id="compHead">
+						<p class="ui-li-aside"><strong>Date: </strong>11/24/12</p>
+						<h1>Company 1</h1>
+						<p><strong>Account #: </strong>7051234</p>
+						<hr>
+					</li>
+					<li data-theme="a">Smokes:<div id="smokeCount" class="ui-li-count">12</div></li>
+					<li data-theme="a">Pulls:<div id="pullCount" class="ui-li-count">4</div></li>
+					<li data-theme="a">FT Heats:<div id="fthCount" class="ui-li-count">27</div></li>
+					<li data-theme="a">ROR Heats:<div id="rorhCount" class="ui-li-count">5</div></li>
+					<li data-theme="a">Horn/Strobes:<div id="hsCount" class="ui-li-count">10</div></li>
+					<li data-theme="a">Strobes:<div id="strobeCount" class="ui-li-count">8</div></li>
+				</ul>
+			</div>
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><button id="edit" data-theme="b" data-mini="true">Edit</button></div>
+				<div class="ui-block-b"><button id="delete" data-theme="b" data-mini="true">Delete</button></div>
+			</fieldset>
+	<!-- ** FOOTER ** -->
+			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="b">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><a href="#list" data-role="button" data-theme="b" data-mini="true">Back</a></div>
+					<div class="ui-block-b"><a href="#home" data-role="button" data-theme="b" data-mini="true">Home</a></div>
+				</fieldset>
+			</div>
+		</div>
 <!-- ** SCRIPTS ** -->
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
