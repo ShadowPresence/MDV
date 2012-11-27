@@ -25,7 +25,7 @@
 		<script src="scripts/libs/modernizr.custom.min.js"></script>
 		<title>F.A.S.T.</title>
 	</head>
-	<body>
+	<body onload="detail">
 <!-- ** Page 1 (home) ** -->
 		<div data-role="page" data-theme="c" id="detail">
 	<!-- ** HEADER ** -->
@@ -35,18 +35,18 @@
 	<!-- ** CONTENT ** -->
 			<div data-role="content">
 				<ul data-role="listview">
-					<li>
+					<li id="compHead">
 						<p class="ui-li-aside"><strong>Date: </strong>11/24/12</p>
 						<h1>Company 1</h1>
 						<p><strong>Account #: </strong>7051234</p>
 						<hr>
 					</li>
-					<li data-theme="a">Smokes:<div class="ui-li-count">12</div></li>
-					<li data-theme="a">Pulls:<div class="ui-li-count">4</div></li>
-					<li data-theme="a">FT Heats:<div class="ui-li-count">27</div></li>
-					<li data-theme="a">ROR Heats:<div class="ui-li-count">5</div></li>
-					<li data-theme="a">Horn/Strobes:<div class="ui-li-count">10</div></li>
-					<li data-theme="a">Strobes:<div class="ui-li-count">8</div></li>
+					<li data-theme="a">Smokes:<div id="smokeCount" class="ui-li-count">12</div></li>
+					<li data-theme="a">Pulls:<div id="pullCount" class="ui-li-count">4</div></li>
+					<li data-theme="a">FT Heats:<div id="fthCount" class="ui-li-count">27</div></li>
+					<li data-theme="a">ROR Heats:<div id="rorhCount" class="ui-li-count">5</div></li>
+					<li data-theme="a">Horn/Strobes:<div id="hsCount" class="ui-li-count">10</div></li>
+					<li data-theme="a">Strobes:<div id="strobeCount" class="ui-li-count">8</div></li>
 				</ul>
 			</div>
 			<fieldset class="ui-grid-a">

@@ -7,5 +7,5 @@
 */
 
 $(document).bind('pageinit', function() {
-	
+	$('#hanger').trigger('create');
 });
