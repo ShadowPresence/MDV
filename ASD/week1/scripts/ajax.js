@@ -15,50 +15,59 @@
 })(jQuery);
 
 var it,
-	render = function (it){
-		var setDiv = $('<div>'),
-			setHead = $('<h3>'),
-			setView = $('<ul>'),
-			setList = $('<li>');
-		setDiv.appendTo('#hanger');
-		setDiv.attr("data-role", "collapsible");
-		setDiv.attr("data-theme", "a");
-		setDiv.append(setHead, setView);
-		setHead.html(it.item.toUpperCase());
-		setView.attr("data-role", "listview");
-		setView.append(setList);
-		for (var n in it) {
-			if (n !== "item") {
-				if ($.isBlank(it[n])) {
-					console.log("The " + n + " field in the " + it.item + " entry, does not contain any data, and will not be assimilated.")
-				} else {
-				setSub = $('<h3>');
-				setDesc = $('<p>');
-				setList.append(setSub, setDesc);
-				setSub.html(n.toUpperCase());
-				setDesc.html(it[n]);
-				};
-			};
-		};
+	list = function (it){
+		var setAnchor = $('<a>'),
+			setText = $('<p>'),
+			setList = $('<li>'),
+			setDate = $('<p>');
+		setList.appendTo('#hanger'); // Adds <li></li>
+		setList.append(setAnchor); // <li><a></a></li>
+	// need to get href to be dynamic
+		setAnchor.attr("href", "detail.html"); // <li><a href="detail.html"></a></li>
+		setAnchor.append(setText); // <li><a href="detail.html"><p></p></a></li>
+		setAnchor.append(setDate); // <li><a href="detail.html"><p></p><p></p></a></li>
+		setText.append($('<strong>').html(it.company), " - " + it.account); // <li><a href="detail.html"><p><strong>Rivergreen</strong> - 7051234</p><p></p></a></li>
+		setDate.append($('<strong>').html("Date: "), it.date); // <li><a href="detail.html"><p><strong>Rivergreen</strong> - 7051234</p><p><strong>Date:</strong>2012-06-07</p></a></li>
+	},
+	detail = function (it){
+		$('#compHead').empty();
+		var xyz = $('<hr />');
+		$('#compHead').append($('<p>').append($('<strong>').html("Date: "), it.date));
+		$('#compHead').append($('<h3>').html(it.company));
+		$('#compHead').append($('<p>').append($('<strong>').html("Account #:"), it.account));
+		xyz.appendTo($('#compHead'));
+		$('#compHead').listview('refresh');
 	};
+
+	// <p class="ui-li-aside"><strong>Date: </strong>11/24/12</p>
+	// 					<h1>Company 1</h1>
+	// 					<p><strong>Account #: </strong>7051234</p>
+	// 					<hr>
+
+		// For use when in detail view to pull info from all the fields
+		// for (var n in it) {
+		// 	if (n !== "company") {
+		// 		if ($.isBlank(it[n])) {
+		// 			console.log("The " + n + " field in the " + it.company + " entry, does not contain any data, and will not be assimilated.")
+		// 		} else {
+					
+		// 		};
+		// 	};
+		// };
 
 // This function processes the json data file. 
 $(function(){
 	$('#hanger').empty();
-	$.ajax({
-		url: "xhr/data.json",
-		type: "GET",
-		dataType: "json",
-		success: function(x){
-			//This loops through each object(item) in the json.data file.
-			for (var i = 0; i < x.Items.length; i++) {
-				it = x.Items[i];
-				console.log(it);
-				// render() loops through each individual item 
-				render(it);
-				// trigger.('create') tells the browser to render the dynamic code using JQM styling
-				$("#hanger").trigger('create');
-			};
-		}
+	$.getJSON('xhr/data.json', function(x){
+		//This loops through each object(item) in the json.data file.
+		for (var i = 0; i < x.inspections.length; i++) {
+			it = x.inspections[i];
+			console.log(it);
+			// render() loops through each individual item
+			list(it);
+			// trigger.('create') tells the browser to render the dynamic DIV element using JQM styling
+			// listview('refresh') renders a listview where trigger does not
+			$('#hanger').listview('refresh');
+		};
 	});
 });
