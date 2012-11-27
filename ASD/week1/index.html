@@ -34,8 +34,8 @@
 			</div>
 	<!-- ** CONTENT ** -->
 			<div id="homeContent" data-role="content">
-				<a href="form.html" data-role="button" data-mini="true" data-theme="e">New</a>
-				<a href="list.html" data-role="button" data-mini="true" data-theme="e">List</a>
+				<a href="#form" data-role="button" data-mini="true" data-theme="e">New</a>
+				<a href="#list" data-role="button" data-mini="true" data-theme="e">List</a>
 			</div>
 		</div>
 <!-- ** Page 2 (Form) ** -->
@@ -68,14 +68,14 @@
 					    <div class="ui-block-a"><input type="button" name="sprkSup" id="sprkSup" data-theme="d" data-mini="true" value="Supervisory" /></div>
 					    <div class="ui-block-b"><input type="button" name="sprkFlow" id="sprkFlow" data-theme="d" data-mini="true" value="Flow" /></div>
 					</fieldset>
-					<input type="submit" value="submit" data-theme="b" />
+					<input type="submit" value="submit" id="save" data-theme="b" />
 				</form>
 			</div>
 	<!-- ** FOOTER ** -->
 			<div data-role="footer" data-id="nav" data-position="fixed" data-theme="c">
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><a href="#home" data-role="button" data-theme="b" data-mini="true">Home</a></div>
-					<div class="ui-block-b"><a href="#list" data-role="button" data-theme="b" data-mini="true">List</a></div>
+					<div class="ui-block-b"><a href="#list" id="lists" data-role="button" data-theme="b" data-mini="true">List</a></div>
 				</fieldset>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 			<div data-role="content">
 				<ul id="hanger" data-role="listview">
 					<li>
-						<a href="detail.html">
+						<a href="#detail">
 							<p><strong>Rivergreen -</strong> 7051234</p>
 							<p><strong>Date: </strong>11/24/12</p>
 						</a>
@@ -112,7 +112,7 @@
 				
 			</div>
 	<!-- ** CONTENT ** -->
-			<div data-role="content">
+			<div id="details" data-role="content">
 				<ul data-role="listview">
 					<li id="compHead">
 						<p class="ui-li-aside"><strong>Date: </strong>11/24/12</p>
@@ -143,7 +143,7 @@
 <!-- ** SCRIPTS ** -->
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-		<script src="scripts/ajax.js"></script>
+		<!-- <script src="scripts/ajax.js"></script> -->
 		<script src="scripts/main.js"></script>
 	</body>
 </html>
